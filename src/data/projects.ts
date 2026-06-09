@@ -78,6 +78,14 @@ export const projects: ProjectData[] = [
         layout: "single" as const,
       },
       {
+        category: "Design Exploration",
+        subtitle: "Exploring Multiple Approaches",
+        content:
+          "Before redesigning the architecture, we explored multiple approaches.\n\n**Option 1 — Rename Market Monitoring**\n\nWe tested clearer terminology and revised labels.\n\n**Rejected**\n\nThe problem wasn't wording. Users still perceived both modules as representing the same marketplace.\n\n**Option 2 — Add Tooltips & Documentation**\n\nWe explored onboarding guides and contextual education.\n\n**Rejected**\n\nUsers ignored explanations because they believed they already understood the workflow.\n\n**Option 3 — Guided Setup Wizard**\n\nWe considered forcing users through both modules sequentially.\n\n**Rejected**\n\nThis improved discovery but preserved the underlying architectural complexity.\n\n**Option 4 — Unified Channel Hub**\n\nInstead of teaching users about internal systems, we reorganized the experience around their mental model.\n\nMarketplace first.\n\nCapabilities second.\n\n**Selected Solution**\n\nThis approach eliminated the distinction users never cared about in the first place.",
+        images: [],
+        layout: "single" as const,
+      },
+      {
         category: "Ideation",
         subtitle: "How We Brainstormed New Ideas",
         content:
