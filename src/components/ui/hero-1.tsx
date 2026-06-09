@@ -295,10 +295,6 @@ export function HeroLanding(props: HeroLandingProps) {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="text-center pb-6 text-xs text-muted-foreground select-none relative z-10">
-        Scroll down to explore my case studies
-      </div>
     </div>
   )
 }
