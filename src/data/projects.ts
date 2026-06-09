@@ -82,7 +82,12 @@ export const projects: ProjectData[] = [
         subtitle: "Exploring Multiple Approaches",
         content:
           "Before redesigning the architecture, we explored multiple approaches.\n\n**Option 1 — Rename Market Monitoring**\n\nWe tested clearer terminology and revised labels.\n\n**Rejected**\n\nThe problem wasn't wording. Users still perceived both modules as representing the same marketplace.\n\n**Option 2 — Add Tooltips & Documentation**\n\nWe explored onboarding guides and contextual education.\n\n**Rejected**\n\nUsers ignored explanations because they believed they already understood the workflow.\n\n**Option 3 — Guided Setup Wizard**\n\nWe considered forcing users through both modules sequentially.\n\n**Rejected**\n\nThis improved discovery but preserved the underlying architectural complexity.\n\n**Option 4 — Unified Channel Hub**\n\nInstead of teaching users about internal systems, we reorganized the experience around their mental model.\n\nMarketplace first.\n\nCapabilities second.\n\n**Selected Solution**\n\nThis approach eliminated the distinction users never cared about in the first place.",
-        images: [],
+        images: [
+          {
+            src: figjamNotesImage,
+            alt: "Brainstorming and ideation",
+          },
+        ],
         layout: "single" as const,
       },
       {
@@ -90,12 +95,7 @@ export const projects: ProjectData[] = [
         subtitle: "How We Brainstormed New Ideas",
         content:
           'We didn\'t try to "improve labels" first — that would be a band-aid over a structural wound. Instead, we asked these questions:\n\n**Why do users perceive them as one?**\nBecause both represent marketplace capability.\n\n**At what moment does context matter?**\nDuring channel setup. A user wants: What can I do with this marketplace? Not "Where is the right module for Task A vs Task B?"\n\n**What options does the user actually need?**\nSell, Monitor, Or both.\n\nSo we shifted away from Two modules to: **One Channel Hub that exposes multiple capabilities.**\n\nWe dumped the idea of educating users through documentation or tooltips. Instead we redesigned the structure so that misunderstanding never happens.',
-        images: [
-          {
-            src: figjamNotesImage,
-            alt: "Brainstorming and ideation",
-          },
-        ],
+        images: [],
         layout: "single" as const,
       },
       {
