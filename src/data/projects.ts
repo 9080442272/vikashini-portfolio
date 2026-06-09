@@ -53,12 +53,7 @@ export const projects: ProjectData[] = [
         subtitle: "Critical Onboarding Failure",
         content:
           "To understand why onboarding was failing, we analyzed user behavior across three distinct data sources. What we found was a massive disconnect between user expectations and our system design: users successfully connected their channels, but expected competitor insights to appear automatically. When the data wasn't visible, they abandoned the platform, creating a flood of support tickets and a significant drop in user trust.",
-        images: [
-          {
-            src: problemEverywhere,
-            alt: "The problem was everywhere — session recordings, support tickets, and funnel analytics",
-          },
-        ],
+        images: [],
         layout: "single" as const,
       },
       {
