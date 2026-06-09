@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
-import { Menu, X, ArrowRight, Sparkles, AlertCircle, CheckCircle, Database, LayoutGrid, Check } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { FlowButton } from '@/components/ui/flow-button'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -74,7 +74,6 @@ export function HeroLanding(props: HeroLandingProps) {
   } = { ...defaultProps, ...props }
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [workflowMode, setWorkflowMode] = useState<'fragmented' | 'unified'>('unified')
   const [activeTextIndex, setActiveTextIndex] = useState(0)
   const isMobile = useIsMobile()
 
@@ -254,194 +253,49 @@ export function HeroLanding(props: HeroLandingProps) {
       </header>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 w-full flex-grow flex flex-col justify-center pt-24 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
-          {/* Text Left */}
-          <div className="lg:col-span-7 text-left flex flex-col justify-center">
-            {announcementBanner && (
-              <div className="mb-6">
-                <div className="inline-flex rounded-full px-3 py-1 text-xs text-muted-foreground ring-1 ring-primary/30 hover:ring-primary/50 transition-all backdrop-blur-sm bg-card/40">
-                  {announcementBanner.text}{' '}
-                  <a href={announcementBanner.linkHref} className="font-semibold text-primary hover:text-primary/80 ml-1 transition-colors">
-                    {announcementBanner.linkText} &rarr;
-                  </a>
-                </div>
+      <div className="relative z-10 max-w-4xl mx-auto px-6 w-full flex-grow flex flex-col justify-center pt-24 pb-16">
+        <div className="text-center">
+          {announcementBanner && (
+            <div className="mb-6 flex justify-center">
+              <div className="inline-flex rounded-full px-3 py-1 text-xs text-muted-foreground ring-1 ring-primary/30 hover:ring-primary/50 transition-all backdrop-blur-sm bg-card/40">
+                {announcementBanner.text}{' '}
+                <a href={announcementBanner.linkHref} className="font-semibold text-primary hover:text-primary/80 ml-1 transition-colors">
+                  {announcementBanner.linkText} &rarr;
+                </a>
               </div>
-            )}
-            
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.15]">
-              Hi, I’m Vikashini — a Product Designer focused on simplifying{' '}
-              <span className="block mt-1 sm:inline sm:mt-0 text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink inline-flex min-h-[1.2em]">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={activeTextIndex}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -15 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    {rotatingWords[activeTextIndex]}
-                  </motion.span>
-                </AnimatePresence>
-              </span>
-            </h1>
-            
-            <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed font-light">
-              {description}
-            </p>
-            
-            {callToActions && callToActions.length > 0 && (
-              <div className="mt-8 flex items-center gap-x-4 sm:gap-x-6">
-                {callToActions.map((cta, index) => renderCallToAction(cta, index))}
-              </div>
-            )}
-          </div>
-
-          {/* Interactive Flow Simulator Right */}
-          <div className="lg:col-span-5 flex justify-center w-full">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-full max-w-md rounded-2xl border border-white/[0.08] bg-card/30 backdrop-blur-md p-6 relative overflow-hidden shadow-2xl"
-            >
-              {/* Simulator Card Header */}
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-neon-purple animate-pulse" />
-                  <span className="text-xs font-semibold text-foreground tracking-wider uppercase">Interactive Architecture Simulator</span>
-                </div>
-                <div className="flex bg-white/[0.04] p-0.5 rounded-lg border border-white/[0.05]">
-                  <button 
-                    onClick={() => setWorkflowMode('fragmented')}
-                    className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${workflowMode === 'fragmented' ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'text-muted-foreground hover:text-foreground'}`}
-                  >
-                    Before
-                  </button>
-                  <button 
-                    onClick={() => setWorkflowMode('unified')}
-                    className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${workflowMode === 'unified' ? 'bg-neon-purple/20 text-neon-purple border border-neon-purple/30' : 'text-muted-foreground hover:text-foreground'}`}
-                  >
-                    After
-                  </button>
-                </div>
-              </div>
-
-              {/* Simulator Flow Screen */}
-              <div className="min-h-[200px] flex flex-col justify-center gap-4 relative">
-                <AnimatePresence mode="wait">
-                  {workflowMode === 'fragmented' ? (
-                    <motion.div
-                      key="fragmented"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 10 }}
-                      transition={{ duration: 0.3 }}
-                      className="space-y-4"
-                    >
-                      <div className="text-center text-xs text-red-400 font-medium bg-red-950/20 border border-red-900/30 rounded-lg p-2 flex items-center justify-center gap-2">
-                        <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                        <span>Mental Model Mismatch (2 Separate Modules)</span>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-3">
-                        {/* Module 1 */}
-                        <div className="rounded-xl border border-white/[0.06] bg-card/50 p-3 flex flex-col gap-2 relative">
-                          <div className="flex items-center gap-1.5">
-                            <LayoutGrid className="w-4 h-4 text-blue-400" />
-                            <span className="text-xs font-semibold text-foreground">Sales Channel</span>
-                          </div>
-                          <p className="text-[10px] text-muted-foreground leading-normal">Connect account and sync listings</p>
-                          <span className="text-[8px] bg-blue-500/10 text-blue-400 self-start px-1.5 py-0.5 rounded border border-blue-500/20">Module A</span>
-                        </div>
-
-                        {/* Module 2 */}
-                        <div className="rounded-xl border border-white/[0.06] bg-card/50 p-3 flex flex-col gap-2 relative">
-                          <div className="flex items-center gap-1.5">
-                            <Database className="w-4 h-4 text-amber-400" />
-                            <span className="text-xs font-semibold text-foreground">Market Monitoring</span>
-                          </div>
-                          <p className="text-[10px] text-muted-foreground leading-normal">Configure pricing data and competitors</p>
-                          <span className="text-[8px] bg-amber-500/10 text-amber-400 self-start px-1.5 py-0.5 rounded border border-amber-500/20">Module B</span>
-                        </div>
-                      </div>
-
-                      <p className="text-xs text-muted-foreground text-center italic mt-2">
-                        "I connected my Amazon channel, why can't I see pricing data here?"
-                      </p>
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="unified"
-                      initial={{ opacity: 0, x: 10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -10 }}
-                      transition={{ duration: 0.3 }}
-                      className="space-y-4"
-                    >
-                      <div className="text-center text-xs text-emerald-400 font-medium bg-emerald-950/20 border border-emerald-900/30 rounded-lg p-2 flex items-center justify-center gap-2">
-                        <CheckCircle className="w-3.5 h-3.5 shrink-0" />
-                        <span>Seamless Connection &amp; Prompt Flow</span>
-                      </div>
-
-                      {/* Unified Hub Module */}
-                      <div className="rounded-xl border border-neon-purple/20 bg-neon-purple/[0.02] p-4 flex flex-col gap-3 relative shadow-[0_0_20px_rgba(155,92,255,0.05)]">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <Sparkles className="w-4 h-4 text-neon-purple" />
-                            <span className="text-xs font-semibold text-foreground">Unified Channel Hub</span>
-                          </div>
-                          <span className="text-[8px] bg-neon-purple/20 text-neon-purple px-1.5 py-0.5 rounded border border-neon-purple/30 font-medium uppercase tracking-wider">Unified Flow</span>
-                        </div>
-                        
-                        <div className="space-y-2">
-                          <div className="flex items-center justify-between text-[11px] text-muted-foreground bg-white/[0.02] p-2 rounded border border-white/[0.04]">
-                            <span>1. Connect Marketplace (API)</span>
-                            <span className="text-emerald-400 font-bold flex items-center gap-0.5"><Check className="w-3 h-3" /> Done</span>
-                          </div>
-                          <motion.div 
-                            initial={{ y: 5, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.2 }}
-                            className="bg-neon-purple/10 border border-neon-purple/20 p-2 rounded flex flex-col gap-1.5"
-                          >
-                            <div className="flex justify-between items-center">
-                              <span className="text-[11px] font-semibold text-foreground">2. Enable Monitoring?</span>
-                              <span className="text-[9px] text-neon-purple font-semibold">Prompt Triggered</span>
-                            </div>
-                            <div className="flex gap-2 mt-1">
-                              <button className="bg-neon-purple hover:bg-neon-purple/80 text-white text-[9px] font-semibold px-2 py-1 rounded transition-colors">Yes, Enable</button>
-                              <button className="bg-white/5 hover:bg-white/10 text-muted-foreground text-[9px] font-semibold px-2 py-1 rounded transition-colors">Not Now</button>
-                            </div>
-                          </motion.div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Impact Stats bottom */}
-              <div className="mt-6 pt-4 border-t border-white/[0.06] grid grid-cols-3 gap-2 text-center">
-                <div>
-                  <div className="text-sm font-bold text-foreground">55%</div>
-                  <div className="text-[9px] text-muted-foreground">Faster Setup</div>
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-foreground">3.1x</div>
-                  <div className="text-[9px] text-muted-foreground">Adoption</div>
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-foreground">63%</div>
-                  <div className="text-[9px] text-muted-foreground">Less Tickets</div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+            </div>
+          )}
+          
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.15] max-w-3xl mx-auto">
+            Hi, I’m Vikashini — a Product Designer focused on simplifying{' '}
+            <span className="block mt-1 sm:inline sm:mt-0 text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink inline-flex min-h-[1.2em]">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={activeTextIndex}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {rotatingWords[activeTextIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+          </h1>
+          
+          <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
+            {description}
+          </p>
+          
+          {callToActions && callToActions.length > 0 && (
+            <div className="mt-8 flex items-center justify-center gap-x-4 sm:gap-x-6">
+              {callToActions.map((cta, index) => renderCallToAction(cta, index))}
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Footer link or indicators */}
+      {/* Scroll Indicator */}
       <div className="text-center pb-6 text-xs text-muted-foreground select-none relative z-10">
         Scroll down to explore my case studies
       </div>
