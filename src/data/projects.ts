@@ -108,7 +108,7 @@ export const projects: ProjectData[] = [
         category: "Impact",
         subtitle: "Measurable Results",
         content:
-          "Following release, we compared performance across four weeks before and four weeks after launch.\n\n**55% Faster Setup**\n\nAverage time-to-first-insight decreased from:\n\n**14 minutes → 6.3 minutes**\n\n**3.1× Increase in Monitoring Adoption**\n\nActivation rate increased from:\n\n**18% → 57%**\n\nMore users successfully reached the platform's core value proposition.\n\n**63% Reduction in Support Tickets**\n\nQuestions related to onboarding confusion dropped significantly.\n\nSupport conversations shifted from:\n\n**\"Where is competitor data?\"**\n\nto\n\n**\"How can I improve pricing strategy?\"**\n\nThis indicated that users were no longer struggling with navigation and could focus on business outcomes.",
+          "Following release, we compared performance across four weeks before and four weeks after launch.\n\n**55% Faster Setup**\n\nAverage time-to-first-insight decreased from:\n**14 minutes → 6.3 minutes**\n**3.1× Increase in Monitoring Adoption**\n\nActivation rate increased from: **18% → 57%**\n\nMore users successfully reached the platform's core value proposition.\n\n**63% Reduction in Support Tickets**\n\nQuestions related to onboarding confusion dropped significantly.\n\nSupport conversations shifted from:\n\n**\"Where is competitor data?\"** to **\"How can I improve pricing strategy?\"**\n\nThis indicated that users were no longer struggling with navigation and could focus on business outcomes.",
         images: [],
         layout: "single" as const,
         figmaEmbed:
