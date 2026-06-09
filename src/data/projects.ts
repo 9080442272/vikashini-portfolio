@@ -108,7 +108,7 @@ export const projects: ProjectData[] = [
         category: "Impact",
         subtitle: "Measurable Results",
         content:
-          'After rollout:\n\n**Setup time dropped by ~55%**\n(avg. 14 min → 6.3 min for first actionable insights)\n\n**Monitoring activation rate increased from ~18% → 57%**\nUsers who connected channels were now actually using the core value feature.\n\n**Support tickets related to onboarding confusion decreased by ~63%**\nInstead of "Where is competitor data?", tickets shifted to high-value questions about strategy.\n\nThis wasn\'t "a nicer UI." It was a structural fix that aligned the product with how merchants actually think.',
+          "Following release, we compared performance across four weeks before and four weeks after launch.\n\n**55% Faster Setup**\n\nAverage time-to-first-insight decreased from:\n\n**14 minutes → 6.3 minutes**\n\n**3.1× Increase in Monitoring Adoption**\n\nActivation rate increased from:\n\n**18% → 57%**\n\nMore users successfully reached the platform's core value proposition.\n\n**63% Reduction in Support Tickets**\n\nQuestions related to onboarding confusion dropped significantly.\n\nSupport conversations shifted from:\n\n**\"Where is competitor data?\"**\n\nto\n\n**\"How can I improve pricing strategy?\"**\n\nThis indicated that users were no longer struggling with navigation and could focus on business outcomes.",
         images: [],
         layout: "single" as const,
         figmaEmbed:
