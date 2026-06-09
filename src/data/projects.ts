@@ -91,14 +91,6 @@ export const projects: ProjectData[] = [
         layout: "single" as const,
       },
       {
-        category: "Ideation",
-        subtitle: "How We Brainstormed New Ideas",
-        content:
-          'We didn\'t try to "improve labels" first — that would be a band-aid over a structural wound. Instead, we asked these questions:\n\n**Why do users perceive them as one?**\nBecause both represent marketplace capability.\n\n**At what moment does context matter?**\nDuring channel setup. A user wants: What can I do with this marketplace? Not "Where is the right module for Task A vs Task B?"\n\n**What options does the user actually need?**\nSell, Monitor, Or both.\n\nSo we shifted away from Two modules to: **One Channel Hub that exposes multiple capabilities.**\n\nWe dumped the idea of educating users through documentation or tooltips. Instead we redesigned the structure so that misunderstanding never happens.',
-        images: [],
-        layout: "single" as const,
-      },
-      {
         category: "Solution",
         subtitle: "The Unified Channel Hub",
         content:
