@@ -41,14 +41,6 @@ export const projects: ProjectData[] = [
     featuredImage: salesChannelImage,
     caseSections: [
       {
-        category: "Introduction",
-        subtitle: "merged channels",
-        content:
-          "Our platform integrated multiple marketplaces. We offered two separate modules:\n\n**Sales Channel** — connect accounts, sync catalogs, manage listings.\n\n**Market Monitoring** — crawl external marketplaces for competitor & pricing data.\n\nInternally, they were two different systems. To users, they looked like the same thing.\n\nThis case study details how we merged these two modules into a single, unified Channel Hub, resulting in a **55% faster setup time**, a dramatic reduction in support tickets, and a product that finally matched our users' mental models.",
-        images: [],
-        layout: "single" as const,
-      },
-      {
         category: "Problem Statement",
         subtitle: "Critical Onboarding Failure",
         content:
