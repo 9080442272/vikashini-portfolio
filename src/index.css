@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 260 20% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 260 20% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 262 100% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 100% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 10% 15%;
+    --muted-foreground: 0 0% 80%;
+
+    --accent: 354 90% 34%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100% / 0.08;
+    --input: 260 20% 15%;
+    --ring: 262 100% 68%;
+
+    --radius: 0.75rem;
+
+    /* Custom neon colors */
+    --neon-purple: 262 100% 68%;
+    --deep-purple: 260 100% 55%;
+    --glow-purple: 262 100% 68% / 0.4;
+    --glow-deep: 260 100% 55% / 0.35;
+
+    /* Gradients */
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% 100%, hsl(260, 100%, 55%) 0%, hsl(354, 90%, 34%) 40%, transparent 70%);
+    --gradient-card: linear-gradient(135deg, hsl(260, 20%, 8%) 0%, hsl(260, 20%, 4%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(262, 100%, 68%, 0.3) 0%, transparent 70%);
+  }
+
+  .dark {
+    --background: 0 0% 5.1%;
+    --foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Cursor styles for interactive elements */
+  a, button, [role="button"], 
+  input[type="submit"], input[type="button"], input[type="reset"],
+  label[for], select, summary, [tabindex]:not([tabindex="-1"]) {
+    @apply cursor-pointer;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"],
+  input[type="search"], input[type="tel"], input[type="url"],
+  input[type="number"], textarea, [contenteditable="true"] {
+    @apply cursor-text;
+  }
+
+  input[disabled], button[disabled], [aria-disabled="true"] {
+    @apply cursor-not-allowed;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-xl border border-white/[0.08] rounded-2xl;
+  }
+
+  .glow-button {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium transition-all duration-300;
+    box-shadow: 0 0 20px hsl(var(--glow-purple)), 0 0 40px hsl(var(--glow-deep));
+  }
+
+  .glow-button:hover {
+    box-shadow: 0 0 30px hsl(var(--glow-purple)), 0 0 60px hsl(var(--glow-deep));
+    transform: translateY(-2px);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--neon-purple)) 0%, hsl(var(--deep-purple)) 100%);
+  }
+
+  .hero-glow {
+    background: var(--gradient-hero);
+  }
+
+  .section-glow {
+    background: var(--gradient-glow);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
