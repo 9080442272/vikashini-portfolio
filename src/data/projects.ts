@@ -57,14 +57,6 @@ export const projects: ProjectData[] = [
         layout: "single" as const,
       },
       {
-        category: "Core Issues",
-        subtitle: "The User's Mental Model Mismatch",
-        content:
-          'They saw Amazon in Sales Channel, clicked Connect, and assumed they\'d get pricing data.\n\nThey saw the same marketplaces in Market Monitoring, thought it was redundant or premium-only.\n\nThey didn\'t understand the difference between "connecting a channel" vs. "enabling data crawling."\n\nTheir expectation was simple:\n**If I connect Amazon, I should get everything Amazon-related in one place.**\n\nBut our product forced them to split actions across two tabs, two vocabularies, two flows. That confusion slowed adoption and triggered support tickets.',
-        images: [],
-        layout: "single" as const,
-      },
-      {
         category: "How We Found It",
         subtitle: "Data-Driven Discovery",
         content:
