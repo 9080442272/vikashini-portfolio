@@ -52,7 +52,7 @@ export const projects: ProjectData[] = [
         category: "Problem Statement",
         subtitle: "Critical Onboarding Failure",
         content:
-          "To understand why onboarding was failing, we analyzed user behavior across three distinct data sources. What we found was a massive disconnect between user expectations and our system design: users successfully connected their channels, but expected competitor insights to appear automatically. When the data wasn't visible, they abandoned the platform, creating a flood of support tickets and a significant drop in user trust.",
+          "To understand why onboarding conversion was underperforming, we analyzed product analytics, support tickets, and user session recordings.\n\nThe findings revealed a consistent pattern:\n\nUsers successfully connected marketplaces through Sales Channel but expected competitor pricing and market insights to appear automatically. When those insights were missing, users assumed the setup was incomplete or the product was malfunctioning.\n\n**As a result:**\n• Users abandoned onboarding before discovering Market Monitoring\n• Activation of the platform's most valuable feature remained low\n• Support teams spent significant time explaining product architecture\n• Trust in the platform decreased during the critical first-use experience\n\n**The issue was not a usability problem—it was a mental model problem.**\n\nUsers viewed marketplaces as a single capability, while our product forced them to navigate two separate systems.",
         images: [],
         layout: "single" as const,
       },
