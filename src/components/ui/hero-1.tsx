@@ -386,7 +386,7 @@ export function HeroLanding(props: HeroLandingProps) {
 
             {/* Tag */}
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">
-              Who I Am &bull; 5+ Yrs Experience
+              Who I Am
             </span>
 
             {/* Skills Tag List */}
