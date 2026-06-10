@@ -344,10 +344,9 @@ export function HeroLanding(props: HeroLandingProps) {
             <div className="flex items-center gap-4 mt-2">
               <a 
                 href="tel:9080442272" 
-                className="h-10 px-4 rounded-full border border-white/10 flex items-center gap-2 text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all text-sm font-medium"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all"
               >
-                <Phone className="w-4 h-4" />
-                <span>9080442272</span>
+                <Phone className="w-5 h-5" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/vikashini-bala-324a531bb/" 
