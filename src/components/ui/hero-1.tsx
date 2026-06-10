@@ -327,7 +327,7 @@ export function HeroLanding(props: HeroLandingProps) {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary to-neon-pink opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl -z-10 blur-xl" />
               
               <img 
-                src="/vikashini_profile.png" 
+                src="/vikashini_profile.jpg" 
                 alt="Vikashini" 
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700 select-none"
               />
