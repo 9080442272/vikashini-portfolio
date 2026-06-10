@@ -48,12 +48,17 @@ const Index = () => {
             </div>
           </div>
         }
-        description="Product Designer with 5+ years building B2B SaaS, E-commerce and AI products used by thousands of users. I help B2B SaaS teams identify why users fail to adopt products and redesign workflows that increase activation, retention and trust."
+        description="Product Designer with 5+ years building B2B SaaS, E-commerce and AI products used by 50,000+ users. I help B2B SaaS teams identify why users fail to adopt products and redesign workflows that increase activation, retention and trust."
         callToActions={[
+          {
+            text: "See case studies",
+            href: "#portfolio",
+            variant: "primary",
+          },
           {
             text: "Download Resume",
             href: "/vikashini_Resume.pdf",
-            variant: "primary",
+            variant: "secondary",
             download: true,
           },
         ]}
