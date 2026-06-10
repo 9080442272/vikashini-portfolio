@@ -38,12 +38,12 @@ const Index = () => {
         onLoginClick={handleContact}
         title={
           <div className="space-y-4">
-            <div className="space-y-3 text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-foreground/90 leading-snug">
+            <div className="space-y-3 text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-white leading-snug">
               <div className="text-center lg:text-left">Users were dropping off during onboarding</div>
               <div className="text-center lg:text-left">Teams were spending too much time on manual work</div>
               <div className="text-center lg:text-left">Complex AI systems were difficult to trust</div>
             </div>
-            <div className="pt-2 text-center lg:text-left text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink uppercase tracking-widest">
+            <div className="pt-2 text-center lg:text-left text-base sm:text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 uppercase tracking-widest">
               Not design problems. Business problems.
             </div>
           </div>

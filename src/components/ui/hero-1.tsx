@@ -165,7 +165,7 @@ export function HeroLanding(props: HeroLandingProps) {
       {!isParentLoading && <CinematicLayer />}
 
       {/* Dark vignette overlays for maximum text contrast and legibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#040406]/35 via-[#040406]/80 to-background z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#040406]/60 via-[#040406]/90 to-background z-0 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(4,4,6,0.9)_100%)] z-0 pointer-events-none" />
 
       {/* Background Tech Grid */}
@@ -385,31 +385,31 @@ export function HeroLanding(props: HeroLandingProps) {
             )}
 
             {/* Tag */}
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-purple-400 mb-3 block">
               Who I Am
             </span>
 
             {/* Skills Tag List */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 text-[11px] font-semibold text-muted-foreground tracking-widest uppercase mb-6">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 text-[11px] font-semibold text-white/80 tracking-widest uppercase mb-6">
               <span>Product Design</span>
-              <span className="text-primary">•</span>
+              <span className="text-purple-400 font-bold">•</span>
               <span>B2B SaaS</span>
-              <span className="text-primary">•</span>
+              <span className="text-purple-400 font-bold">•</span>
               <span>E-Commerce</span>
-              <span className="text-primary">•</span>
+              <span className="text-purple-400 font-bold">•</span>
               <span>AI Systems</span>
-              <span className="text-primary">•</span>
+              <span className="text-purple-400 font-bold">•</span>
               <span>Cybersecurity</span>
-              <span className="text-primary">•</span>
+              <span className="text-purple-400 font-bold">•</span>
               <span>UX Research</span>
             </div>
 
             {/* Headline / Summary Bio Paragraph */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-[1.3] mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white leading-[1.3] mb-6">
               {title}
             </h1>
             
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-light mb-8 max-w-2xl">
+            <p className="text-base sm:text-lg text-white/85 leading-relaxed font-normal mb-8 max-w-2xl">
               {description}
             </p>
 
