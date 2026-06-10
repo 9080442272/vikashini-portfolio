@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Github, Linkedin, Mail } from 'lucide-react'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { FlowButton } from '@/components/ui/flow-button'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
+import CinematicLayer from '@/components/CinematicLayer'
 
 interface NavigationItem {
   name: string
@@ -37,8 +38,8 @@ interface HeroLandingProps {
   loginText?: string
   loginHref?: string
   onLoginClick?: () => void
-  title: string
-  description: string
+  title: React.ReactNode
+  description: React.ReactNode
   announcementBanner?: AnnouncementBanner
   callToActions?: CallToAction[]
   titleSize?: 'small' | 'medium' | 'large'
@@ -47,6 +48,8 @@ interface HeroLandingProps {
     to: string
   }
   className?: string
+  isParentLoading?: boolean
+  videoUrl?: string
 }
 
 const defaultProps: Partial<HeroLandingProps> = {
@@ -54,6 +57,42 @@ const defaultProps: Partial<HeroLandingProps> = {
   gradientColors: {
     from: "hsl(267, 100%, 55%)",
     to: "hsl(280, 100%, 40%)"
+  },
+  videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-purple-and-blue-neon-lights-loop-43093-large.mp4"
+}
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1], // easeOutExpo
+    },
+  },
+}
+
+const headerVariants = {
+  hidden: { opacity: 0, y: -15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 }
 
@@ -70,21 +109,14 @@ export function HeroLanding(props: HeroLandingProps) {
     callToActions,
     titleSize,
     gradientColors,
-    className
+    className,
+    isParentLoading = false,
+    videoUrl
   } = { ...defaultProps, ...props }
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeTextIndex, setActiveTextIndex] = useState(0)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const isMobile = useIsMobile()
-
-  const rotatingWords = ["complex workflows", "B2B SaaS products", "fulfillment systems", "e-commerce hubs"]
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveTextIndex((prev) => (prev + 1) % rotatingWords.length)
-    }, 3000)
-    return () => clearInterval(timer)
-  }, [])
 
   const renderCallToAction = (cta: CallToAction, index: number) => {
     if (cta.variant === 'primary') {
@@ -114,13 +146,33 @@ export function HeroLanding(props: HeroLandingProps) {
     }
   }
 
+  const animateState = isParentLoading ? "hidden" : "visible"
+
   return (
-    <div className={`min-h-screen w-full overflow-hidden relative bg-background flex flex-col justify-between ${className || ''}`}>
+    <div className={`min-h-screen w-full overflow-hidden relative bg-transparent flex flex-col justify-between ${className || ''}`}>
+      {/* Cinematic Looping Video Backdrop */}
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-25 select-none pointer-events-none"
+        src={videoUrl}
+      />
+
+      {/* WebGL Depth-of-Field (Bokeh) Layer */}
+      {!isParentLoading && <CinematicLayer />}
+
+      {/* Dark vignette overlays for maximum text contrast and legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#040406]/35 via-[#040406]/80 to-background z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(4,4,6,0.9)_100%)] z-0 pointer-events-none" />
+
       {/* Background Tech Grid */}
       <div 
-        className="absolute inset-0 opacity-20 pointer-events-none z-0" 
+        className="absolute inset-0 opacity-10 pointer-events-none z-0" 
         style={{
-          backgroundImage: `radial-gradient(circle at center, rgba(255,255,255,0.08) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle at center, rgba(255,255,255,0.06) 1px, transparent 1px)`,
           backgroundSize: '24px 24px'
         }}
       />
@@ -128,7 +180,7 @@ export function HeroLanding(props: HeroLandingProps) {
       {/* Glow Effects */}
       <div
         aria-hidden="true"
-        className="absolute -top-40 -left-40 z-0 w-[500px] h-[500px] rounded-full opacity-30 blur-[120px] pointer-events-none"
+        className="absolute -top-40 -left-40 z-0 w-[500px] h-[500px] rounded-full opacity-20 blur-[120px] pointer-events-none"
         style={{
           background: `radial-gradient(circle, hsl(267, 100%, 50%) 0%, transparent 70%)`,
         }}
@@ -136,14 +188,19 @@ export function HeroLanding(props: HeroLandingProps) {
       
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 right-0 z-0 w-[500px] h-[500px] rounded-full opacity-20 blur-[130px] pointer-events-none"
+        className="absolute -bottom-40 right-0 z-0 w-[500px] h-[500px] rounded-full opacity-10 blur-[130px] pointer-events-none"
         style={{
           background: `radial-gradient(circle, hsl(320, 100%, 50%) 0%, transparent 70%)`,
         }}
       />
 
       {/* Header */}
-      <header className="absolute inset-x-0 top-0 z-50">
+      <motion.header
+        initial="hidden"
+        animate={animateState}
+        variants={headerVariants}
+        className="absolute inset-x-0 top-0 z-50"
+      >
         <nav aria-label="Global" className="flex items-center justify-between p-4 sm:p-6 lg:px-8 max-w-[1200px] mx-auto">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5 flex items-center gap-2">
@@ -250,50 +307,121 @@ export function HeroLanding(props: HeroLandingProps) {
             </div>
           </DialogContent>
         </Dialog>
-      </header>
+      </motion.header>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 w-full flex-grow flex flex-col justify-center pt-24 pb-16">
-        <div className="text-center">
-          {announcementBanner && (
-            <div className="mb-6 flex justify-center">
-              <div className="inline-flex rounded-full px-3 py-1 text-xs text-muted-foreground ring-1 ring-primary/30 hover:ring-primary/50 transition-all backdrop-blur-sm bg-card/40">
-                {announcementBanner.text}{' '}
-                <a href={announcementBanner.linkHref} className="font-semibold text-primary hover:text-primary/80 ml-1 transition-colors">
-                  {announcementBanner.linkText} &rarr;
-                </a>
+      {/* Main Content (Split Layout) */}
+      <motion.div
+        initial="hidden"
+        animate={animateState}
+        variants={containerVariants}
+        className="relative z-10 max-w-[1150px] mx-auto px-6 w-full flex-grow flex flex-col justify-center pt-32 pb-20"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Portrait & Socials */}
+          <motion.div 
+            variants={itemVariants} 
+            className="lg:col-span-5 flex flex-col items-center lg:items-start gap-6"
+          >
+            <div className="relative w-full max-w-[320px] aspect-square rounded-2xl border border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.6)] group">
+              {/* Glowing decorative backdrop */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary to-neon-pink opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl -z-10 blur-xl" />
+              
+              <img 
+                src="/vikashini_profile.png" 
+                alt="Vikashini" 
+                className="w-full h-full object-cover rounded-2xl transition-all duration-700 select-none"
+              />
+              
+              {/* Handwritten signature script overlay */}
+              <div className="absolute -bottom-6 -right-6 rotate-[-6deg] select-none pointer-events-none z-20">
+                <span className="font-['Caveat'] text-5xl md:text-6xl text-primary drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
+                  Vikashini
+                </span>
               </div>
             </div>
-          )}
-          
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.15] max-w-3xl mx-auto">
-            Hi, I’m Vikashini — a Product Designer focused on simplifying{' '}
-            <span className="block mt-1 sm:inline sm:mt-0 text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink inline-flex min-h-[1.2em]">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={activeTextIndex}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  {rotatingWords[activeTextIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </span>
-          </h1>
-          
-          <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
-            {description}
-          </p>
-          
-          {callToActions && callToActions.length > 0 && (
-            <div className="mt-8 flex items-center justify-center gap-x-4 sm:gap-x-6">
-              {callToActions.map((cta, index) => renderCallToAction(cta, index))}
+            
+            {/* Social Links */}
+            <div className="flex items-center gap-4 mt-2">
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/vikashini-bala-324a531bb/" 
+                target="_blank" 
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="mailto:vikashinibala14@gmail.com" 
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
             </div>
-          )}
+          </motion.div>
+
+          {/* Right Column: Bio details */}
+          <motion.div 
+            variants={itemVariants} 
+            className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left"
+          >
+            {/* Announcement Banner */}
+            {announcementBanner && (
+              <div className="mb-4 flex justify-center lg:justify-start">
+                <div className="inline-flex rounded-full px-3 py-1 text-xs text-muted-foreground ring-1 ring-primary/30 hover:ring-primary/50 transition-all backdrop-blur-sm bg-card/40">
+                  {announcementBanner.text}{' '}
+                  <a href={announcementBanner.linkHref} className="font-semibold text-primary hover:text-primary/80 ml-1 transition-colors">
+                    {announcementBanner.linkText} &rarr;
+                  </a>
+                </div>
+              </div>
+            )}
+
+            {/* Tag */}
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-3 block">
+              Who I Am &bull; 5+ Yrs Experience
+            </span>
+
+            {/* Skills Tag List */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 text-[11px] font-semibold text-muted-foreground tracking-widest uppercase mb-6">
+              <span>Product Design</span>
+              <span className="text-primary">•</span>
+              <span>B2B SaaS</span>
+              <span className="text-primary">•</span>
+              <span>E-Commerce</span>
+              <span className="text-primary">•</span>
+              <span>AI Systems</span>
+              <span className="text-primary">•</span>
+              <span>Cybersecurity</span>
+              <span className="text-primary">•</span>
+              <span>UX Research</span>
+            </div>
+
+            {/* Headline / Summary Bio Paragraph */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-[1.3] mb-6">
+              {title}
+            </h1>
+            
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-light mb-8 max-w-2xl">
+              {description}
+            </p>
+
+            {/* Call To Actions */}
+            {callToActions && callToActions.length > 0 && (
+              <div className="flex items-center justify-center lg:justify-start gap-4">
+                {callToActions.map((cta, index) => renderCallToAction(cta, index))}
+              </div>
+            )}
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
     </div>
   )
