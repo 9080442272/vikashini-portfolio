@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react'
+import { Menu, X, Phone, Linkedin, Mail } from 'lucide-react'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { FlowButton } from '@/components/ui/flow-button'
 import { motion } from 'framer-motion'
@@ -343,12 +343,11 @@ export function HeroLanding(props: HeroLandingProps) {
             {/* Social Links */}
             <div className="flex items-center gap-4 mt-2">
               <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noreferrer"
-                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all"
+                href="tel:9080442272" 
+                className="h-10 px-4 rounded-full border border-white/10 flex items-center gap-2 text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all text-sm font-medium"
               >
-                <Github className="w-5 h-5" />
+                <Phone className="w-4 h-4" />
+                <span>9080442272</span>
               </a>
               <a 
                 href="https://www.linkedin.com/in/vikashini-bala-324a531bb/" 
