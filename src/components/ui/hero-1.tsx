@@ -342,59 +342,32 @@ export function HeroLanding(props: HeroLandingProps) {
             </div>
             
             {/* Social Links */}
-            <div className="flex items-center gap-4 mt-2">
-              <motion.a 
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mt-2">
+              <a 
                 href="tel:9080442272" 
-                className="h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all overflow-hidden flex-shrink-0 cursor-pointer"
-                initial={{ width: 40 }}
-                whileHover={{ 
-                  width: 110,
-                  paddingLeft: 12,
-                  paddingRight: 12,
-                }}
-                transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                className="h-10 px-4 rounded-full border border-white/10 flex items-center gap-2 text-white/80 hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all text-xs font-semibold cursor-pointer"
               >
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <Phone className="w-5 h-5 flex-shrink-0" />
-                  <span className="text-xs font-semibold whitespace-nowrap">Call Me</span>
-                </div>
-              </motion.a>
+                <Phone className="w-4 h-4 flex-shrink-0" />
+                <span>Call Me</span>
+              </a>
 
-              <motion.a 
+              <a 
                 href="https://www.linkedin.com/in/vikashini-bala-324a531bb/" 
                 target="_blank" 
                 rel="noreferrer"
-                className="h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all overflow-hidden flex-shrink-0 cursor-pointer"
-                initial={{ width: 40 }}
-                whileHover={{ 
-                  width: 115,
-                  paddingLeft: 12,
-                  paddingRight: 12,
-                }}
-                transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                className="h-10 px-4 rounded-full border border-white/10 flex items-center gap-2 text-white/80 hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all text-xs font-semibold cursor-pointer"
               >
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <Linkedin className="w-5 h-5 flex-shrink-0" />
-                  <span className="text-xs font-semibold whitespace-nowrap">LinkedIn</span>
-                </div>
-              </motion.a>
+                <Linkedin className="w-4 h-4 flex-shrink-0" />
+                <span>LinkedIn</span>
+              </a>
 
-              <motion.a 
+              <a 
                 href="mailto:vikashinibala14@gmail.com" 
-                className="h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all overflow-hidden flex-shrink-0 cursor-pointer"
-                initial={{ width: 40 }}
-                whileHover={{ 
-                  width: 120,
-                  paddingLeft: 12,
-                  paddingRight: 12,
-                }}
-                transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                className="h-10 px-4 rounded-full border border-white/10 flex items-center gap-2 text-white/80 hover:text-primary hover:border-primary/30 bg-black/40 backdrop-blur-sm transition-all text-xs font-semibold cursor-pointer"
               >
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <Mail className="w-5 h-5 flex-shrink-0" />
-                  <span className="text-xs font-semibold whitespace-nowrap">Email Me</span>
-                </div>
-              </motion.a>
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span>Email Me</span>
+              </a>
             </div>
           </motion.div>
 
