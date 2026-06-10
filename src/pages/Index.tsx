@@ -48,7 +48,7 @@ const Index = () => {
             </div>
           </div>
         }
-        description="I help organizations uncover the root cause of user friction and create experiences that make complex products feel intuitive, efficient, and human."
+        description="Product Designer with 5+ years building B2B SaaS, E-commerce and AI products used by thousands of users. I help B2B SaaS teams identify why users fail to adopt products and redesign workflows that increase activation, retention and trust."
         callToActions={[
           {
             text: "Download Resume",
