@@ -19,14 +19,18 @@ const experiences = [
     tech: ["Figma", "UX Design", "AI Systems", "Security Dashboards", "Data Visualization"]
   },
   {
-    period: "Jan 2022 - Present",
+    period: "Jan 2022 - Feb 2026",
     company: "Boostmyshop",
     role: "Product Designer",
-    location: "Pondicherry",
+    location: "Puducherry, India",
     bullets: [
-      "Owned UX for myWebPOS, myPricing and myMarket, redesigning core e-commerce and operational workflows.",
-      "Built myWebPOS from scratch, simplified onboarding, removed merchant friction and improved activation, task completion, and daily usage across multiple modules.",
-      "Focused on real merchant behavior, funnels, and product logic—not just UI screens."
+      "Sole designer across three B2B SaaS products — partnered with Product and Engineering to translate complex merchant workflows into evidence-based, high-adoption UX.",
+      "Impact at a Glance: Onboarding activation rose 18% → 57%, pricing edit time cut 20 → 2 min, setup time reduced by 55%, task completion rate rose by 25%, and daily feature usage lifted 200%+.",
+      "myWebPOS (0→1): Defined the full information architecture and POS workflow from scratch — eliminating critical merchant friction and enabling first-time users to complete core tasks without support.",
+      "Onboarding Redesign: Consolidated fragmented modules into a single linear flow, cutting average setup time by 55% and tripling activation from 18% to 57%.",
+      "myPricing Bulk Editor: Replaced a manual per-item workflow with an in-product bulk editor — reduced edit time from 20 min to under 2 min, adoption jumped from 15% to 68%.",
+      "Competitive Intelligence (myMarket): Designed a layered data-to-decision interface that increased daily feature usage by 200%+, giving merchants actionable pricing signals.",
+      "Usability Framework: Built funnel, heatmap, and session-review analysis process that proactively surfaced recurring user errors before they became support tickets."
     ],
     tech: ["Figma", "User Research", "Interaction Design", "B2B SaaS", "User Funnels"]
   },
@@ -165,7 +169,7 @@ const WorkExperienceSection = () => {
                     <div 
                       className="overflow-hidden transition-all duration-500 ease-in-out"
                       style={{
-                        maxHeight: isHovered ? "400px" : "55px",
+                        maxHeight: isHovered ? "800px" : "55px",
                         opacity: isHovered ? 1 : 0.65,
                       }}
                     >
