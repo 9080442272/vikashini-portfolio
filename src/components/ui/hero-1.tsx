@@ -117,7 +117,7 @@ export function HeroLanding(props: HeroLandingProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isMobile = useIsMobile()
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [isMuted, setIsMuted] = useState(true)
+  const [isMuted, setIsMuted] = useState(false)
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -130,9 +130,22 @@ export function HeroLanding(props: HeroLandingProps) {
   useEffect(() => {
     if (!isParentLoading && videoRef.current) {
       videoRef.current.currentTime = 0
-      videoRef.current.play().catch(err => {
-        console.warn("Video play failed:", err)
-      })
+      videoRef.current.muted = false
+      setIsMuted(false)
+      
+      const playPromise = videoRef.current.play()
+      if (playPromise !== undefined) {
+        playPromise.catch(err => {
+          console.warn("Unmuted autoplay blocked by browser, falling back to muted:", err)
+          if (videoRef.current) {
+            videoRef.current.muted = true
+            setIsMuted(true)
+            videoRef.current.play().catch(playErr => {
+              console.warn("Muted playback also failed:", playErr)
+            })
+          }
+        })
+      }
     }
   }, [isParentLoading])
 
