@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { Menu, X, Phone, Linkedin, Mail, Volume2, VolumeX } from 'lucide-react'
 import { useIsMobile } from '@/hooks/use-mobile'
@@ -126,6 +126,15 @@ export function HeroLanding(props: HeroLandingProps) {
       setIsMuted(newMuted)
     }
   }
+
+  useEffect(() => {
+    if (!isParentLoading && videoRef.current) {
+      videoRef.current.currentTime = 0
+      videoRef.current.play().catch(err => {
+        console.warn("Video play failed:", err)
+      })
+    }
+  }, [isParentLoading])
 
   const renderCallToAction = (cta: CallToAction, index: number) => {
     if (cta.variant === 'primary') {
