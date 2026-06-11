@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { Menu, X, Phone, Linkedin, Mail } from 'lucide-react'
 import { useIsMobile } from '@/hooks/use-mobile'
@@ -115,7 +115,6 @@ export function HeroLanding(props: HeroLandingProps) {
   } = { ...defaultProps, ...props }
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
   const isMobile = useIsMobile()
 
   const renderCallToAction = (cta: CallToAction, index: number) => {
@@ -151,15 +150,11 @@ export function HeroLanding(props: HeroLandingProps) {
 
   return (
     <div className={`min-h-screen w-full overflow-hidden relative bg-transparent flex flex-col justify-between ${className || ''}`}>
-      {/* Cinematic Looping Video Backdrop */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-25 select-none pointer-events-none"
-        src={videoUrl}
+      {/* Static Image Backdrop */}
+      <img
+        src="/vikashini_profile.jpg"
+        alt="Background Backdrop"
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-[0.12] select-none pointer-events-none blur-[6px]"
       />
 
       {/* WebGL Depth-of-Field (Bokeh) Layer */}
