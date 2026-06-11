@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
-import { Menu, X, Phone, Linkedin, Mail } from 'lucide-react'
+import { Menu, X, Phone, Linkedin, Mail, Volume2, VolumeX } from 'lucide-react'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { FlowButton } from '@/components/ui/flow-button'
 import { motion } from 'framer-motion'
@@ -116,6 +116,16 @@ export function HeroLanding(props: HeroLandingProps) {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isMobile = useIsMobile()
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isMuted, setIsMuted] = useState(true)
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      const newMuted = !videoRef.current.muted
+      videoRef.current.muted = newMuted
+      setIsMuted(newMuted)
+    }
+  }
 
   const renderCallToAction = (cta: CallToAction, index: number) => {
     if (cta.variant === 'primary') {
@@ -150,12 +160,6 @@ export function HeroLanding(props: HeroLandingProps) {
 
   return (
     <div className={`min-h-screen w-full overflow-hidden relative bg-transparent flex flex-col justify-between ${className || ''}`}>
-      {/* Static Image Backdrop */}
-      <img
-        src="/vikashini_profile.jpg"
-        alt="Background Backdrop"
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-[0.12] select-none pointer-events-none blur-[6px]"
-      />
 
       {/* WebGL Depth-of-Field (Bokeh) Layer */}
       {!isParentLoading && <CinematicLayer />}
@@ -322,11 +326,33 @@ export function HeroLanding(props: HeroLandingProps) {
               {/* Glowing decorative backdrop */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary to-neon-pink opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl -z-10 blur-xl" />
               
-              <img 
-                src="/vikashini_profile.jpg" 
-                alt="Vikashini" 
+              <video
+                ref={videoRef}
+                src="/hero_background.mp4"
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700 select-none"
               />
+
+              {/* Sound Control Button */}
+              <button
+                onClick={toggleMute}
+                className="absolute bottom-3 left-3 z-30 h-8 px-3 rounded-full border border-white/10 flex items-center gap-1.5 text-white/90 hover:text-primary hover:border-primary/30 bg-black/60 backdrop-blur-md transition-all text-[11px] font-semibold cursor-pointer shadow-md select-none hover:scale-105 active:scale-95"
+              >
+                {isMuted ? (
+                  <>
+                    <VolumeX className="w-3.5 h-3.5" />
+                    <span>Unmute</span>
+                  </>
+                ) : (
+                  <>
+                    <Volume2 className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
+                    <span>Mute</span>
+                  </>
+                )}
+              </button>
               
               {/* Handwritten signature script overlay */}
               <div className="absolute -bottom-6 -right-6 rotate-[-6deg] select-none pointer-events-none z-20">
