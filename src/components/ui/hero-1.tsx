@@ -330,7 +330,6 @@ export function HeroLanding(props: HeroLandingProps) {
                 ref={videoRef}
                 src="/hero_background.mp4"
                 autoPlay
-                loop
                 muted={isMuted}
                 playsInline
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700 select-none"
