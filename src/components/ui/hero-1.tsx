@@ -58,7 +58,7 @@ const defaultProps: Partial<HeroLandingProps> = {
     from: "hsl(267, 100%, 55%)",
     to: "hsl(280, 100%, 40%)"
   },
-  videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-purple-and-blue-neon-lights-loop-43093-large.mp4"
+  videoUrl: "/hero_background.mp4"
 }
 
 const containerVariants = {
