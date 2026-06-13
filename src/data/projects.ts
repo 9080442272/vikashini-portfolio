@@ -123,7 +123,7 @@ export const projects: ProjectData[] = [
         category: "Problem",
         subtitle: "Inefficient Pricing Management",
         content:
-          "Users struggled to efficiently manage pricing for large product catalogs. Sellers with hundreds of items had to adjust prices one product at a time, which was slow, error-prone, and led to inconsistent pricing.\n\nWhile a bulk spreadsheet upload feature existed, it created new friction—every price change required users to download, edit, and re-upload files, breaking their workflow and adding extra steps instead of simplifying the process.",
+          "The existing bulk pricing workflow depended on spreadsheet uploads.\n\nTo make pricing changes, users needed to:\n1. Select products\n2. Download a spreadsheet\n3. Open and edit the file\n4. Save changes\n5. Re-upload the spreadsheet\n6. Wait for validation\n7. Apply updates\n\nAlthough powerful, the process disrupted users' workflow and created unnecessary effort for a task performed regularly.\n\n**As a result:**\n• Bulk pricing adoption remained low\n• Users reverted to manual product updates\n• Large catalogs took significant time to manage\n• Pricing inconsistencies increased\n• Support teams received recurring requests for a simpler solution\n\n**The problem wasn't a lack of functionality.**\n\nThe problem was that the workflow required users to leave the product context to complete a routine task.",
         images: [],
         layout: "single" as const,
       },
