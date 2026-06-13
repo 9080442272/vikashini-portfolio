@@ -18,6 +18,7 @@ import conclusionKeyTakeaways from "@/assets/projects/conclusion-key-takeaways.p
 import solutionUnifiedChannelHub from "@/assets/projects/solution-unified-channel-hub.png";
 import howWeFoundItDiscovery from "@/assets/projects/how-we-found-it-discovery.png";
 import bulkPricingProblemImage from "@/assets/projects/bulk-pricing-problem.png";
+import bulkPricingDiscoveryImage from "@/assets/projects/bulk-pricing-discovery.jpg";
 
 export interface ProjectData {
   id: number;
@@ -135,9 +136,13 @@ export const projects: ProjectData[] = [
       {
         category: "How We Found It",
         subtitle: "Data-Driven Discovery",
-        content:
-          'We identified this through:\n\n**User feedback** directly criticizing the spreadsheet workflow: "It feels like double work."\n\n**Analytics** showing low adoption of the bulk upload feature—only 15% of eligible users used it monthly\n\n**Session recordings** revealing users would start the upload process, then abandon it and revert to manual edits\n\n**Support tickets** asking: "Can\'t I just adjust prices here without downloading a file?"',
-        images: [],
+        content: "",
+        images: [
+          {
+            src: bulkPricingDiscoveryImage,
+            alt: "How we found it data-driven discovery diagram: User feedback, product analytics, session recordings, and support tickets",
+          },
+        ],
         layout: "single" as const,
       },
       {
