@@ -37,18 +37,19 @@ const Index = () => {
         loginText="Contact"
         onLoginClick={handleContact}
         title={
-          <div className="space-y-4">
-            <div className="space-y-3 text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-white leading-snug">
-              <div className="text-center lg:text-left">Users were dropping off during onboarding</div>
-              <div className="text-center lg:text-left">Teams were spending too much time on manual work</div>
-              <div className="text-center lg:text-left">Complex AI systems were difficult to trust</div>
+          <div className="space-y-2">
+            <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white/50 text-center lg:text-left mb-2">
+              Vikashini — Product Designer
             </div>
-            <div className="pt-2 text-center lg:text-left text-base sm:text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 uppercase tracking-widest">
-              Not design problems. Business problems.
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] text-center lg:text-left">
+              I turn user friction
+            </div>
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 leading-[1.15] text-center lg:text-left">
+              into business growth.
             </div>
           </div>
         }
-        description="Product Designer with 5+ years building B2B SaaS, E-commerce and AI products used by 50,000+ users. I help B2B SaaS teams identify why users fail to adopt products and redesign workflows that increase activation, retention and trust."
+        description="5+ years designing B2B SaaS, e-commerce, and AI products used by 50,000+ users. I find where adoption breaks — and fix the workflow behind it."
         callToActions={[
           {
             text: "See case studies",
