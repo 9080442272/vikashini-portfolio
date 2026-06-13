@@ -19,6 +19,7 @@ import solutionUnifiedChannelHub from "@/assets/projects/solution-unified-channe
 import howWeFoundItDiscovery from "@/assets/projects/how-we-found-it-discovery.png";
 import bulkPricingProblemImage from "@/assets/projects/bulk-pricing-problem.png";
 import bulkPricingDiscoveryImage from "@/assets/projects/bulk-pricing-discovery.jpg";
+import bulkPricingImpactImage from "@/assets/projects/bulk-pricing-impact.png";
 
 export interface ProjectData {
   id: number;
@@ -173,9 +174,13 @@ export const projects: ProjectData[] = [
       {
         category: "Impact",
         subtitle: "Measurable Results",
-        content:
-          "Following release, we measured adoption and workflow efficiency.\n\n⚡ **10× Faster Bulk Updates**\nUpdating more than 200 products decreased from approximately:\n**20 Minutes ➔ Under 2 Minutes**\n\n📈 **4.5× Increase in Feature Adoption**\nBulk pricing usage increased from:\n**15% ➔ 68%**\n\n💬 **Reduced Operational Friction**\nMerchants could complete pricing tasks without leaving the platform, resulting in:\n• Faster catalog management\n• Fewer manual edits\n• More consistent pricing updates\n• Reduced dependency on support",
-        images: [],
+        content: "Following release, we measured adoption and workflow efficiency.",
+        images: [
+          {
+            src: bulkPricingImpactImage,
+            alt: "Impact & Results: Bulk Action Adoption (15% to 68%), Time to Update 200 Products (20 min to under 2 min), Spreadsheet Dependency (100% to 0%), and Manual Product Edits (High to Low).",
+          },
+        ],
         layout: "single" as const,
       },
       {
