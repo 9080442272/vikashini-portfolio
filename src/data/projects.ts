@@ -154,10 +154,10 @@ export const projects: ProjectData[] = [
         layout: "single" as const,
       },
       {
-        category: "Ideation",
-        subtitle: "Exploring Different Approaches",
+        category: "Design Exploration",
+        subtitle: "Exploring Multiple Approaches",
         content:
-          "**Brainstorming paths we considered:**\n\n• **Single long form** – too overwhelming, users would get lost\n• **Collapsible sections** – better, but still dense\n• **Wizard-style multi-step** – too many clicks, breaks flow\n• **Tabs by category** – the winner: logical grouping without hidden steps\n\n**Key insight:** Users wanted to see, select, and adjust products in the same place—no context switching, no file handling, no re-uploading. But they needed clarity amidst complexity.",
+          "We explored several approaches before arriving at the final solution.\n\n**Option 1 — Single Form**\nAll bulk actions displayed in one screen.\n❌ **Rejected** — The interface became overwhelming and difficult to scan.\n\n**Option 2 — Collapsible Sections**\nGrouped actions inside expandable panels.\n❌ **Rejected** — Reduced visual clutter but increased navigation effort.\n\n**Option 3 — Multi-Step Wizard**\nSeparated actions into sequential steps.\n❌ **Rejected** — Improved organization but slowed down frequent workflows.\n\n**Option 4 — Intent-Based Tabs**\nActions grouped by what users were trying to accomplish.\n✅ **Selected** — This approach reduced cognitive load while preserving visibility and speed.\n\n**Key Insight:**\nUsers did not think in terms of fields. They thought in terms of goals.\n\nThey wanted to:\n• Change product status\n• Adjust pricing inputs\n• Define pricing strategies\n\nThis insight became the foundation of the information architecture.",
         images: [],
         layout: "single" as const,
       },
