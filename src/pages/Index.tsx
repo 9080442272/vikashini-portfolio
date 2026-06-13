@@ -56,12 +56,6 @@ const Index = () => {
             href: "#portfolio",
             variant: "primary",
           },
-          {
-            text: "Download Resume",
-            href: "/vikashini_Resume.pdf",
-            variant: "secondary",
-            download: true,
-          },
         ]}
         titleSize="large"
         gradientColors={{
