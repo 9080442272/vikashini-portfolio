@@ -45,7 +45,7 @@ const Index = () => {
               I turn user friction
             </div>
             <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 leading-[1.15] text-center lg:text-left">
-              into business growth.
+              into business growth
             </div>
           </div>
         }
