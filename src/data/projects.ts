@@ -167,6 +167,7 @@ export const projects: ProjectData[] = [
         content:
           "We replaced spreadsheet uploads with a contextual bulk editing experience directly inside the product list.\n\n**Product Selection in Context**\nUsers can select products directly from the catalog view.\n• No downloads\n• No external tools\n• No context switching\n\nVisual selection states provide immediate feedback.\n\n**Intent-Based Editing Structure**\nActions were organized into three focused tabs:\n\n1. **Product Status** (Operational controls such as Monitoring, Optimization, and Product activation)\n2. **Product Attributes** (Pricing inputs including Reference Price, Wholesale Price, Shipping Cost, Additional Cost, and Tax and Commission Settings)\n3. **Product Strategy** (Competitive pricing rules such as Minimum Price, Maximum Price, Fixed Price, and Competitor-based Rules)\n\n**Instant Application**\nOnce changes are configured:\n• Users review updates\n• Apply changes immediately\n• Results appear directly within the platform\n\nNo file validation. No upload process. No waiting.",
         images: [],
+        figmaEmbed: "https://embed.figma.com/design/GgHcLuNY0U2JJAFCe1JWYM/Bulk-Action?node-id=0-1&embed-host=share",
         layout: "single" as const,
       },
       {
@@ -175,7 +176,6 @@ export const projects: ProjectData[] = [
         content:
           "Following release, we measured adoption and workflow efficiency.\n\n⚡ **10× Faster Bulk Updates**\nUpdating more than 200 products decreased from approximately:\n**20 Minutes ➔ Under 2 Minutes**\n\n📈 **4.5× Increase in Feature Adoption**\nBulk pricing usage increased from:\n**15% ➔ 68%**\n\n💬 **Reduced Operational Friction**\nMerchants could complete pricing tasks without leaving the platform, resulting in:\n• Faster catalog management\n• Fewer manual edits\n• More consistent pricing updates\n• Reduced dependency on support",
         images: [],
-        figmaEmbed: "https://embed.figma.com/design/GgHcLuNY0U2JJAFCe1JWYM/Bulk-Action?node-id=0-1&embed-host=share",
         layout: "single" as const,
       },
       {
