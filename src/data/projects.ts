@@ -136,7 +136,7 @@ export const projects: ProjectData[] = [
       {
         category: "How We Found It",
         subtitle: "Data-Driven Discovery",
-        content: "",
+        content: "To validate the problem, we analyzed multiple sources of user behavior.",
         images: [
           {
             src: bulkPricingDiscoveryImage,
