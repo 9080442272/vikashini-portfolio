@@ -170,12 +170,20 @@ export const projects: ProjectData[] = [
         layout: "single" as const,
       },
       {
-        category: "Conclusion",
-        subtitle: "Measurable Impact",
+        category: "Impact",
+        subtitle: "Measurable Results",
         content:
-          "By moving bulk actions into the platform, we reduced the time to adjust 200+ products from ~20 minutes (with spreadsheet download/edit/upload) to **under 2 minutes**.\n\nUser adoption of bulk pricing actions increased from **15% to 68%** post-launch.\n\nThe design succeeded because it removed the file middleman and let users work directly with their products, in context, with immediate feedback—turning a fragmented workflow into a seamless one.\n\n**This shows that sometimes the best solution isn't adding another tool, but integrating functionality where users already are.**",
+          "Following release, we measured adoption and workflow efficiency.\n\n⚡ **10× Faster Bulk Updates**\nUpdating more than 200 products decreased from approximately:\n**20 Minutes ➔ Under 2 Minutes**\n\n📈 **4.5× Increase in Feature Adoption**\nBulk pricing usage increased from:\n**15% ➔ 68%**\n\n💬 **Reduced Operational Friction**\nMerchants could complete pricing tasks without leaving the platform, resulting in:\n• Faster catalog management\n• Fewer manual edits\n• More consistent pricing updates\n• Reduced dependency on support",
         images: [],
         figmaEmbed: "https://embed.figma.com/design/GgHcLuNY0U2JJAFCe1JWYM/Bulk-Action?node-id=0-1&embed-host=share",
+        layout: "single" as const,
+      },
+      {
+        category: "Conclusion",
+        subtitle: "Key Takeaways",
+        content:
+          "The design succeeded because it removed the file middleman and let users work directly with their products, in context, with immediate feedback—turning a fragmented workflow into a seamless one.\n\n**This shows that sometimes the best solution isn't adding another tool, but integrating functionality where users already are.**",
+        images: [],
         layout: "single" as const,
       },
     ],
