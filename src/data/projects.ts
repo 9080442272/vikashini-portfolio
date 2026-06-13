@@ -17,6 +17,7 @@ import problemEverywhere from "@/assets/projects/problem-everywhere.png";
 import conclusionKeyTakeaways from "@/assets/projects/conclusion-key-takeaways.png";
 import solutionUnifiedChannelHub from "@/assets/projects/solution-unified-channel-hub.png";
 import howWeFoundItDiscovery from "@/assets/projects/how-we-found-it-discovery.png";
+import bulkPricingProblemImage from "@/assets/projects/bulk-pricing-problem.png";
 
 export interface ProjectData {
   id: number;
@@ -122,9 +123,13 @@ export const projects: ProjectData[] = [
       {
         category: "Problem",
         subtitle: "Inefficient Pricing Management",
-        content:
-          "The existing bulk pricing workflow depended on spreadsheet uploads.\n\nTo make pricing changes, users needed to:\n1. Select products\n2. Download a spreadsheet\n3. Open and edit the file\n4. Save changes\n5. Re-upload the spreadsheet\n6. Wait for validation\n7. Apply updates\n\nAlthough powerful, the process disrupted users' workflow and created unnecessary effort for a task performed regularly.\n\n**As a result:**\n• Bulk pricing adoption remained low\n• Users reverted to manual product updates\n• Large catalogs took significant time to manage\n• Pricing inconsistencies increased\n• Support teams received recurring requests for a simpler solution\n\n**The problem wasn't a lack of functionality.**\n\nThe problem was that the workflow required users to leave the product context to complete a routine task.",
-        images: [],
+        content: "",
+        images: [
+          {
+            src: bulkPricingProblemImage,
+            alt: "Bulk pricing problem statement: current workflow spreadsheet dependency and repetitive edit cycle",
+          },
+        ],
         layout: "single" as const,
       },
       {
