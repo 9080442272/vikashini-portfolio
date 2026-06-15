@@ -20,6 +20,7 @@ import howWeFoundItDiscovery from "@/assets/projects/how-we-found-it-discovery.p
 import bulkPricingProblemImage from "@/assets/projects/bulk-pricing-problem.png";
 import bulkPricingDiscoveryImage from "@/assets/projects/bulk-pricing-discovery.jpg";
 import bulkPricingImpactImage from "@/assets/projects/bulk-pricing-impact.png";
+import competitorIntelligenceDiscoveryImage from "@/assets/projects/competitor-intelligence-discovery.png";
 
 export interface ProjectData {
   id: number;
@@ -215,9 +216,13 @@ export const projects: ProjectData[] = [
       {
         category: "How We Found It",
         subtitle: "The Evidence Was Everywhere",
-        content:
-          'We didn\'t have to look hard—users were practically begging for this:\n\n**Direct User Feedback (100+ interviews/surveys):**\n• "Your competitor data is too basic—I need to know if they\'re actually credible."\n• "I use 3 other tools just to get what I should get from you."\n• "Show me trends, not just snapshots."\n\n**Support Tickets Painting the Picture:**\n• "Can you add seller ratings next to prices?"\n• "How do I see if a competitor is consistently cheaper?"\n• "Your data feels like half the story."',
-        images: [],
+        content: "We analyzed user interviews, support conversations, and product usage to understand how merchants used competitor data in practice.",
+        images: [
+          {
+            src: competitorIntelligenceDiscoveryImage,
+            alt: "How We Found It — The Evidence Was Everywhere diagram: User interviews & surveys, support tickets, and workflow observation showing the manual process.",
+          },
+        ],
         layout: "single" as const,
       },
       {
