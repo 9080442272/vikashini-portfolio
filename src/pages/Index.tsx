@@ -11,7 +11,12 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { FlowButton } from "@/components/ui/flow-button";
 
 const Index = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => {
+    if (typeof window !== "undefined") {
+      return !sessionStorage.getItem("portfolio_loader_shown");
+    }
+    return true;
+  });
   const isMobile = useIsMobile();
 
   const handleContact = () => {
@@ -24,7 +29,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {isLoading && <ScreenLoader onComplete={() => setIsLoading(false)} />}
+      {isLoading && (
+        <ScreenLoader
+          onComplete={() => {
+            if (typeof window !== "undefined") {
+              sessionStorage.setItem("portfolio_loader_shown", "true");
+            }
+            setIsLoading(false);
+          }}
+        />
+      )}
       <HeroLanding
         isParentLoading={isLoading}
         logo={{
