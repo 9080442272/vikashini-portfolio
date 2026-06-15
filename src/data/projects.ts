@@ -21,6 +21,7 @@ import bulkPricingProblemImage from "@/assets/projects/bulk-pricing-problem.png"
 import bulkPricingDiscoveryImage from "@/assets/projects/bulk-pricing-discovery.jpg";
 import bulkPricingImpactImage from "@/assets/projects/bulk-pricing-impact.png";
 import competitorIntelligenceDiscoveryImage from "@/assets/projects/competitor-intelligence-discovery.png";
+import competitorIntelligenceImpactImage from "@/assets/projects/competitor-intelligence-impact.png";
 
 export interface ProjectData {
   id: number;
@@ -266,8 +267,13 @@ export const projects: ProjectData[] = [
         category: "Conclusion",
         subtitle: "Transformation Results",
         content:
-          '**Before → After Impact:**\n• Time to Insight: 5+ minutes → 15 seconds\n• Decision Confidence: 42% → 89%\n• Feature Adoption: 22% → 78%\n• User Satisfaction: 2.8/5 → 4.6/5\n\n**Key Metrics Improvement:**\n• Daily Active Users: +210%\n• Actions Taken Per Session: +340%\n• Support Tickets: -65%\n• Premium Feature Upsells: +45%\n\n**User Feedback That Validated the Pivot:**\n"Before, I had data. Now, I have answers."\n"Your tool went from being a reference manual to a strategic advisor."\n"I finally understand what \'competitor intelligence\' means."',
-        images: [],
+          '"Before, I had data. Now, I have answers."\n\nThe redesign transformed Market Radar from a basic price table to a complete competitor intelligence platform, driving significant improvements across user adoption and strategic business outcomes.',
+        images: [
+          {
+            src: competitorIntelligenceImpactImage,
+            alt: "Competitor Intelligence Before vs After & Impact results: Faster analysis (5+ min to 15s), higher confidence (42% to 89%), higher adoption (22% to 78%), and business impact metrics.",
+          },
+        ],
         layout: "single" as const,
       },
     ],
