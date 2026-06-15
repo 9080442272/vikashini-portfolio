@@ -1,11 +1,10 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { Menu, X, Phone, Linkedin, Mail, Volume2, VolumeX } from 'lucide-react'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { FlowButton } from '@/components/ui/flow-button'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import CinematicLayer from '@/components/CinematicLayer'
 
 interface NavigationItem {
@@ -273,62 +272,83 @@ export function HeroLanding(props: HeroLandingProps) {
           )}
         </nav>
         
-        {/* Mobile menu */}
-        <Dialog open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-          <DialogContent className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-card px-4 py-4 sm:px-6 sm:py-6 sm:max-w-sm sm:ring-1 sm:ring-border lg:hidden [&>button]:hidden">
-            <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5 flex items-center gap-2">
-                {logo?.icon ? (
-                  logo.icon
-                ) : (
-                  <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                    <span className="text-primary-foreground font-bold text-sm">V</span>
-                  </div>
-                )}
-                <span className="font-semibold text-foreground">{logo?.companyName}</span>
-              </a>
-              <button
-                type="button"
+        {/* Mobile menu (Framer Motion Drawer) */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <>
+              {/* Dark backdrop blur */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-muted-foreground hover:text-foreground transition-colors"
+                className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm lg:hidden"
+              />
+
+              {/* Slide-out Panel */}
+              <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'spring', damping: 25, stiffness: 220 }}
+                className="fixed inset-y-0 right-0 z-50 w-full sm:max-w-sm bg-[#040406]/95 backdrop-blur-md border-l border-white/10 p-6 flex flex-col justify-between shadow-2xl lg:hidden"
               >
-                <span className="sr-only">Close menu</span>
-                <X aria-hidden="true" className="size-6" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-border">
-                {navigation && navigation.length > 0 && (
-                  <div className="space-y-2 py-6">
-                    {navigation.map((item) => (
+                <div>
+                  {/* Header Row */}
+                  <div className="flex items-center justify-between pb-6 border-b border-white/5">
+                    <a href="#" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+                      {logo?.icon ? (
+                        logo.icon
+                      ) : (
+                        <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                          <span className="text-primary-foreground font-bold text-sm">V</span>
+                        </div>
+                      )}
+                      <span className="font-semibold text-foreground">{logo?.companyName}</span>
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="rounded-md p-2 text-muted-foreground hover:text-foreground transition-colors border border-white/5 bg-white/5"
+                    >
+                      <span className="sr-only">Close menu</span>
+                      <X aria-hidden="true" className="size-5" />
+                    </button>
+                  </div>
+
+                  {/* Navigation Links */}
+                  <div className="mt-8 flex flex-col gap-4">
+                    {navigation && navigation.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-card-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                        className="text-lg font-semibold text-foreground/80 hover:text-primary transition-all py-2 border-b border-white/[0.03]"
                       >
                         {item.name}
                       </a>
                     ))}
                   </div>
-                )}
+                </div>
+
+                {/* Bottom CTA Button */}
                 {loginText && (
-                  <div className="py-6">
+                  <div className="pt-6 border-t border-white/5">
                     <button
                       onClick={() => {
                         setMobileMenuOpen(false)
                         onLoginClick?.()
                       }}
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-card-foreground hover:bg-accent hover:text-accent-foreground transition-colors w-full text-left bg-transparent border-none cursor-pointer"
+                      className="w-full py-3 px-4 rounded-xl bg-primary hover:bg-primary/95 text-primary-foreground font-semibold text-center transition-all shadow-lg shadow-primary/20"
                     >
                       {loginText}
                     </button>
                   </div>
                 )}
-              </div>
-            </div>
-          </DialogContent>
-        </Dialog>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </motion.header>
 
       {/* Main Content (Split Layout) */}

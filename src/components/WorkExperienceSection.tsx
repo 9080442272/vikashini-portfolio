@@ -143,7 +143,7 @@ const WorkExperienceSection = () => {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
                     onMouseEnter={() => handleCardMouseEnter(index)}
                     onMouseLeave={handleCardMouseLeave}
-                    className={`glass-card p-6 md:p-8 rounded-2xl border transition-all duration-500 cursor-pointer ${
+                    className={`glass-card p-6 md:p-8 rounded-2xl border transition-all duration-500 ${
                       isHovered 
                         ? "border-primary/40 shadow-glow bg-card/75" 
                         : "border-white/[0.06] hover:border-white/10 bg-card/40"
@@ -165,14 +165,8 @@ const WorkExperienceSection = () => {
                       </div>
                     </div>
 
-                    {/* Collapsible Bullet Points List */}
-                    <div 
-                      className="overflow-hidden transition-all duration-500 ease-in-out"
-                      style={{
-                        maxHeight: isHovered ? "800px" : "55px",
-                        opacity: isHovered ? 1 : 0.65,
-                      }}
-                    >
+                    {/* Bullet Points List */}
+                    <div className="mt-4">
                       <ul className="space-y-3 list-none pl-0">
                         {exp.bullets.map((bullet, bulletIdx) => (
                           <li key={bulletIdx} className="text-sm md:text-base text-muted-foreground leading-relaxed flex items-start gap-3">
@@ -182,13 +176,6 @@ const WorkExperienceSection = () => {
                         ))}
                       </ul>
                     </div>
-
-                    {/* Prompt indicator to expand bullets */}
-                    {!isHovered && (
-                      <span className="text-[10px] tracking-widest text-primary/60 font-semibold uppercase mt-3 block animate-pulse">
-                        Hover card to expand details
-                      </span>
-                    )}
 
                     {/* Tech Stack Tags */}
                     <div className="flex flex-wrap gap-2 mt-6">
