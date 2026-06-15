@@ -117,6 +117,7 @@ export function HeroLanding(props: HeroLandingProps) {
   const isMobile = useIsMobile()
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isMuted, setIsMuted] = useState(false)
+  const [videoPlaying, setVideoPlaying] = useState(false)
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -127,7 +128,14 @@ export function HeroLanding(props: HeroLandingProps) {
   }
 
   useEffect(() => {
+    if (typeof window === "undefined") return
+
     if (!isParentLoading && videoRef.current) {
+      const hasPlayed = sessionStorage.getItem("portfolio_video_played")
+      if (hasPlayed) {
+        return
+      }
+
       videoRef.current.currentTime = 0
       videoRef.current.muted = false
       setIsMuted(false)
@@ -145,6 +153,8 @@ export function HeroLanding(props: HeroLandingProps) {
           }
         })
       }
+
+      sessionStorage.setItem("portfolio_video_played", "true")
     }
   }, [isParentLoading])
 
@@ -374,26 +384,30 @@ export function HeroLanding(props: HeroLandingProps) {
                 autoPlay
                 muted={isMuted}
                 playsInline
+                onPlay={() => setVideoPlaying(true)}
+                onEnded={() => setVideoPlaying(false)}
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700 select-none"
               />
 
               {/* Sound Control Button */}
-              <button
-                onClick={toggleMute}
-                className="absolute bottom-3 left-3 z-30 h-8 px-3 rounded-full border border-white/10 flex items-center gap-1.5 text-white/90 hover:text-primary hover:border-primary/30 bg-black/60 backdrop-blur-md transition-all text-[11px] font-semibold cursor-pointer shadow-md select-none hover:scale-105 active:scale-95"
-              >
-                {isMuted ? (
-                  <>
-                    <VolumeX className="w-3.5 h-3.5" />
-                    <span>Unmute</span>
-                  </>
-                ) : (
-                  <>
-                    <Volume2 className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
-                    <span>Mute</span>
-                  </>
-                )}
-              </button>
+              {videoPlaying && (
+                <button
+                  onClick={toggleMute}
+                  className="absolute bottom-3 left-3 z-30 h-8 px-3 rounded-full border border-white/10 flex items-center gap-1.5 text-white/90 hover:text-primary hover:border-primary/30 bg-black/60 backdrop-blur-md transition-all text-[11px] font-semibold cursor-pointer shadow-md select-none hover:scale-105 active:scale-95"
+                >
+                  {isMuted ? (
+                    <>
+                      <VolumeX className="w-3.5 h-3.5" />
+                      <span>Unmute</span>
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
+                      <span>Mute</span>
+                    </>
+                  )}
+                </button>
+              )}
               
               {/* Handwritten signature script overlay */}
               <div className="absolute -bottom-6 -right-6 rotate-[-6deg] select-none pointer-events-none z-20">
