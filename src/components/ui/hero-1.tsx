@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Menu, X, Phone, Linkedin, Mail, Volume2, VolumeX } from 'lucide-react'
+import { Menu, X, Phone, Linkedin, Mail, Volume2, VolumeX, Play } from 'lucide-react'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { FlowButton } from '@/components/ui/flow-button'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -95,6 +95,8 @@ const headerVariants = {
   },
 }
 
+let hasAutoplayedThisSession = false
+
 export function HeroLanding(props: HeroLandingProps) {
   const {
     logo,
@@ -119,7 +121,8 @@ export function HeroLanding(props: HeroLandingProps) {
   const [isMuted, setIsMuted] = useState(false)
   const [videoPlaying, setVideoPlaying] = useState(false)
 
-  const toggleMute = () => {
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation()
     if (videoRef.current) {
       const newMuted = !videoRef.current.muted
       videoRef.current.muted = newMuted
@@ -127,12 +130,24 @@ export function HeroLanding(props: HeroLandingProps) {
     }
   }
 
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play()
+          .then(() => setVideoPlaying(true))
+          .catch(err => console.warn("Manual play failed:", err))
+      } else {
+        videoRef.current.pause()
+        setVideoPlaying(false)
+      }
+    }
+  }
+
   useEffect(() => {
     if (typeof window === "undefined") return
 
     if (!isParentLoading && videoRef.current) {
-      const hasPlayed = sessionStorage.getItem("portfolio_video_played")
-      if (hasPlayed) {
+      if (hasAutoplayedThisSession) {
         return
       }
 
@@ -154,7 +169,7 @@ export function HeroLanding(props: HeroLandingProps) {
         })
       }
 
-      sessionStorage.setItem("portfolio_video_played", "true")
+      hasAutoplayedThisSession = true
     }
   }, [isParentLoading])
 
@@ -374,20 +389,31 @@ export function HeroLanding(props: HeroLandingProps) {
             variants={itemVariants} 
             className="lg:col-span-5 flex flex-col items-center lg:items-start gap-6"
           >
-            <div className="relative w-full max-w-[320px] aspect-square rounded-2xl border border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.6)] group">
+            <div 
+              onClick={togglePlay}
+              className="relative w-full max-w-[320px] aspect-square rounded-2xl border border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.6)] group cursor-pointer overflow-hidden animate-glow"
+            >
               {/* Glowing decorative backdrop */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary to-neon-pink opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl -z-10 blur-xl" />
               
               <video
                 ref={videoRef}
                 src="/hero_background.mp4"
-                autoPlay
                 muted={isMuted}
                 playsInline
                 onPlay={() => setVideoPlaying(true)}
                 onEnded={() => setVideoPlaying(false)}
-                className="w-full h-full object-cover rounded-2xl transition-all duration-700 select-none"
+                className="w-full h-full object-cover rounded-2xl transition-all duration-700 select-none animate-scale"
               />
+
+              {/* Play / Pause overlay */}
+              {!videoPlaying && (
+                <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/35 rounded-2xl group-hover:bg-black/50 transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-6 h-6 fill-white ml-0.5" />
+                  </div>
+                </div>
+              )}
 
               {/* Sound Control Button */}
               {videoPlaying && (

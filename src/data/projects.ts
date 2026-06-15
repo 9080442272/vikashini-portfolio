@@ -242,23 +242,24 @@ export const projects: ProjectData[] = [
         images: [],
         layout: "single" as const,
       },
+
       {
-        category: "Design Pivot",
-        subtitle: "From 'Show Everything' to 'Show What Matters'",
+        category: "Solution",
+        subtitle: "Layered Intelligence Framework",
         content:
-          'We realized our fundamental mistake: We designed for data completeness instead of decision support.\n\n**Key Insight from User Interviews:**\n"I don\'t need to see 500 metrics. I need to know: Are they a threat? Can I beat them? Should I worry?"\n\n**The Three Questions Every User Really Had:**\n1. "Should I care about this competitor?" (Credibility assessment)\n2. "Are they winning or losing?" (Performance trend)\n3. "What should I do about it?" (Actionable recommendation)',
+          "We redesigned Market Radar around three levels of insight.\n\n**Level 1 — Quick Scan**\nInformation immediately visible in the competitor table:\n• Price\n• Seller Rating\n• Market Position\n• Threat Indicators\n\nThis enabled fast scanning and comparison across competitors.\n\n**Level 2 — Context on Demand**\nUsers could expand a competitor row without leaving the page.\n\nAdditional insights included:\n• Historical Price Trends\n• Seller Performance\n• Product Availability\n• Marketplace Presence\n• Competitive Positioning\n\nThis eliminated the need for external research.\n\n**Level 3 — Decision Support**\nInstead of simply displaying data, the system provided actionable context.\n\nExamples:\n• Emerging Threat\n• Aggressive Price Drop Detected\n• Temporary Promotion Likely\n• Strong Competitor Performance\n\nUsers could understand what was happening and why it mattered.",
         images: [
           {
             src: productListExpanded,
-            alt: "Brainstorming and ideation",
+            alt: "Redesigned competitor intelligence solution showing expanded view, performance analysis, and configuration settings.",
           },
           {
             src: performanceAnalysis,
-            alt: "Brainstorming and ideation",
+            alt: "Performance analysis metrics within the expanded competitor details.",
           },
           {
             src: performanceSettings,
-            alt: "Brainstorming and ideation",
+            alt: "Seller performance settings and thresholds configurations.",
           },
         ],
         layout: "single" as const,
