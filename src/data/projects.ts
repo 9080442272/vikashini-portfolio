@@ -455,13 +455,8 @@ export const projects: ProjectData[] = [
         category: "Design Exploration",
         subtitle: "Exploring Multiple Approaches",
         content:
-          "Before moving into the final UI, I explored different product directions based on the actual business context.\n\n### Why I chose it\nIt creates a balance between:\n**Manual processes** ➔ **Enterprise ERP complexity**\n\nVikassy sits in the middle:\n> **Simple enough for a small business, structured enough to reduce operational fragmentation.**",
-        images: [
-          {
-            src: vikassyExplorationImage,
-            alt: "Design Exploration - Build a Full ERP vs Build Only a Billing Product vs Build a Lightweight Business Operations Platform",
-          },
-        ],
+          `Before moving into the final UI, I explored different product directions based on the actual business context.\n\n![Design Exploration](${vikassyExplorationImage})\n\n### Why I chose it\nIt creates a balance between:\n**Manual processes** ➔ **Enterprise ERP complexity**\n\nVikassy sits in the middle:\n> **Simple enough for a small business, structured enough to reduce operational fragmentation.**`,
+        images: [],
         layout: "single" as const,
       },
       {
