@@ -5,7 +5,7 @@ import productAttributes from "@/assets/projects/product-attributes.png";
 import productList from "@/assets/projects/product-list.png";
 import myOrderImage from "@/assets/projects/myorder.png";
 import myWebPOSThumbnail from "@/assets/projects/mywebpos-thumbnail.png";
-import vikassyImage from "@/assets/projects/vikassy.jpg";
+import vikassyImage from "@/assets/projects/vikassy.png";
 
 
 const projects = [

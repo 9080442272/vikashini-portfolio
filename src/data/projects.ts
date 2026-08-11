@@ -22,7 +22,9 @@ import bulkPricingDiscoveryImage from "@/assets/projects/bulk-pricing-discovery.
 import bulkPricingImpactImage from "@/assets/projects/bulk-pricing-impact.png";
 import competitorIntelligenceDiscoveryImage from "@/assets/projects/competitor-intelligence-discovery.png";
 import competitorIntelligenceImpactImage from "@/assets/projects/competitor-intelligence-impact.png";
-import vikassyImage from "@/assets/projects/vikassy.jpg";
+import vikassyImage from "@/assets/projects/vikassy.png";
+
+
 
 
 export interface ProjectData {
