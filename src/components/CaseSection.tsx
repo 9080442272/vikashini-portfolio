@@ -38,6 +38,22 @@ const CaseSection = ({ category, subtitle, content, images, layout = "single", f
 
             return content.split("\n").map((line, lineIndex) => {
               const trimmedLine = line.trim();
+              if (trimmedLine.startsWith("![") && trimmedLine.endsWith(")")) {
+                const match = trimmedLine.match(/^!\[(.*?)\]\((.*?)\)$/);
+                if (match) {
+                  const alt = match[1];
+                  const src = match[2];
+                  return (
+                    <div key={lineIndex} className="my-6 overflow-hidden rounded-xl border border-white/[0.06] transition-all duration-300 hover:border-neon-purple/30 hover:shadow-[0_0_30px_rgba(155,92,255,0.2)]">
+                      <img
+                        src={src}
+                        alt={alt}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  );
+                }
+              }
               if (trimmedLine.startsWith("### ")) {
                 return (
                   <h3 key={lineIndex} className="text-lg md:text-xl font-bold text-foreground mt-6 mb-2 pt-2">

@@ -447,13 +447,8 @@ export const projects: ProjectData[] = [
         category: "How We Found It",
         subtitle: "The problem wasn't a lack of software. It was fragmented information.",
         content:
-          "Because Varahi Export is my father's business, I had direct exposure to how day-to-day management happened.\n\nI observed that the owner had to personally coordinate multiple areas of the business while relying on different methods for recording information.\n\n### Key insight\n> **The problem wasn't “we need more features.” It was “we need less fragmentation.”**",
-        images: [
-          {
-            src: vikassyDiscoveryImage,
-            alt: "The Reality We Observed - fragmented tools vs unified business system diagram",
-          },
-        ],
+          `Because Varahi Export is my father's business, I had direct exposure to how day-to-day management happened.\n\nI observed that the owner had to personally coordinate multiple areas of the business while relying on different methods for recording information.\n\n![The Reality We Observed](${vikassyDiscoveryImage})\n\n### Key insight\n> **The problem wasn't “we need more features.” It was “we need less fragmentation.”**`,
+        images: [],
         layout: "single" as const,
       },
       {
