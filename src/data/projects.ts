@@ -415,14 +415,87 @@ export const projects: ProjectData[] = [
   },
   {
     id: 6,
-    title: "vikassy",
-    subtitle: "Client: Vikassy | My Role: Product Designer | Industry: E-commerce | Platform: Web/Mobile App",
+    title: "Vikassy — Digitising day-to-day operations for a small garment business",
+    subtitle: "Client: Varahi Export | My Role: Product Designer & Product Owner | Industry: Garment Manufacturing | Platform: Web Application",
     featuredImage: vikassyImage,
     caseSections: [
       {
         category: "Overview",
-        subtitle: "Project Introduction",
-        content: "Content will be provided later.",
+        subtitle: "Technology & AI-Assisted Development",
+        content:
+          "Vikassy was not only designed in Figma — I also took the product from design into a working web application using AI-assisted development.\n\n### Tech stack\n• **React + JSX** — frontend application\n• **JavaScript** — application logic and utilities\n• **TypeScript** — Convex backend functions, schema, and data layer\n• **CSS / Tailwind CSS** — styling and responsive UI\n• **Vite** — frontend build and development environment\n• **Convex** — backend, database, and server-side functions\n• **Chart.js** — data visualisation\n• **Lucide React** — interface icons\n\n### AI-assisted / Vibe Coding\nI developed the working product with the help of **Antigravity**, using an AI-assisted development workflow to translate product requirements, UX decisions, and interface designs into functional code.\n\nRather than treating AI as a replacement for product or design thinking, I used it as a development accelerator — defining the product requirements and workflows myself, guiding implementation, reviewing the generated code, debugging issues, and iterating on the product.\n\nThis project demonstrates my ability to move beyond design files and **rapidly turn product ideas into functional software using modern AI-assisted development workflows.**\n\n***\n\n💡 **Vikassy — Digitising day-to-day operations for a small garment business**\nI designed a lightweight business management platform for Varahi Export, a Tirupur-based garment business that relied heavily on manual processes and separate accounting tools. The goal was to reduce operational fragmentation and give the business owner a single, simple view of sales, jobs, workforce and finances.\n\n**Role:** Product Designer / Product Owner\n**Business:** Varahi Export\n**Location:** Tirupur, Tamil Nadu\n**Industry:** Garment Manufacturing / Export\n**Tech Stack:** React · JavaScript · TypeScript · Tailwind CSS · Vite · Convex\n**Platform:** Web\n**Scope:** Product Strategy · Information Architecture · UX/UI · Dashboard · Business Workflows",
+        images: [],
+        layout: "single" as const,
+      },
+      {
+        category: "Problem",
+        subtitle: "Small businesses are still running critical operations manually",
+        content:
+          "Varahi Export is a small garment business in Tirupur, managed directly by the business owner without dedicated accounts, HR, or operations teams.\n\nBilling and accounting are handled through tools such as Tally, while many day-to-day activities still depend on **manual records, scattered information, and the owner's memory**.\n\nThis creates a fragmented workflow:\n• **Client information** → manual records\n• **Job tracking** → manual records\n• **Expenses** → manual tracking\n• **Workforce information** → manual tracking\n• **Billing** → separate accounting software\n\n### The opportunity\n> **How might we give a small garment-business owner one simple place to understand and manage day-to-day operations without introducing the complexity of a traditional ERP?**",
+        images: [],
+        layout: "single" as const,
+      },
+      {
+        category: "How We Found It",
+        subtitle: "The problem wasn't a lack of software. It was fragmented information.",
+        content:
+          "Because Varahi Export is my father's business, I had direct exposure to how day-to-day management happened.\n\nI observed that the owner had to personally coordinate multiple areas of the business while relying on different methods for recording information.\n\n### Key insight\n> **The problem wasn't “we need more features.” It was “we need less fragmentation.”**",
+        images: [],
+        layout: "single" as const,
+      },
+      {
+        category: "Design Exploration",
+        subtitle: "Exploring Multiple Approaches",
+        content:
+          "Before moving into the final UI, I explored different product directions based on the actual business context.\n\n### Why I chose it\nIt creates a balance between:\n**Manual processes** ➔ **Enterprise ERP complexity**\n\nVikassy sits in the middle:\n> **Simple enough for a small business, structured enough to reduce operational fragmentation.**",
+        images: [],
+        layout: "single" as const,
+      },
+      {
+        category: "Solution",
+        subtitle: "A lightweight business operations platform",
+        content:
+          "The final product brings the most important operational information into one place.\n\n### Sales & Billing\n**Clients ➔ Invoice**\nManage customer information and billing without switching between different records.\n\n### Operations\n**Jobs**\nTrack active business jobs and understand what work is currently happening.\n\n### Workforce\n**Employees / workers**\nMaintain basic workforce information without turning the product into a complex HR system.\n\n### Finance\n**Capital & Investment ➔ Factory Expenses & Bills**\nGive the owner visibility into business spending and capital.",
+        images: [],
+        layout: "single" as const,
+      },
+      {
+        category: "Product Decisions",
+        subtitle: "Designing for Real Data & Financial Semantics",
+        content:
+          "One of the key product decisions was **not filling the dashboard with fake or meaningless data**.\n\nWhen there are no invoices:\n> **No revenue trend available yet**\n> Create your first invoice to start tracking revenue.\n\nWhen there are no customer sales:\n> **No customer sales data yet**\n\nWhen there are no invoices:\n> **No invoices yet**\n> Create your first invoice to start tracking sales and payments.\n\nThis makes the product honest about its current state while giving the user a clear next action.\n\n### Financial semantics\nA dashboard metric such as **Net Profit Margin** should represent a percentage, not a currency amount.\n\nSo when there is no revenue, the product shows the actual **Net Profit** rather than presenting a misleading margin percentage.\n\n> **Data consistency is a UX requirement, not just a technical requirement.**",
+        images: [],
+        layout: "single" as const,
+      },
+      {
+        category: "Architecture",
+        subtitle: "Information Architecture & Final Product Structure",
+        content:
+          "The final IA reflects the actual business rather than an enterprise software template:\n\n```\nDashboard\n\nSales & Billing\n ├── Clients\n └── Invoice\n\nOperations\n └── Jobs\n\nWorkforce\n └── Employees\n\nFinance\n ├── Capital & Investment\n └── Factory Expenses & Bills\n\nSystem\n └── Settings\n```\n\n### Why this structure?\nEach section represents a distinct responsibility:\n• **Sales & Billing** → money earned\n• **Operations** → work being done\n• **Workforce** → people involved\n• **Finance** → money going out / capital\n• **Dashboard** → overall business visibility",
+        images: [],
+        layout: "single" as const,
+      },
+      {
+        category: "User Experience",
+        subtitle: "Designing for the Real User & Contract Workforce",
+        content:
+          "The primary user isn't a Finance Manager, HR Manager or Operations Director. It's closer to:\n> **A business owner who manages multiple responsibilities personally.**\n\nThat changes the UX significantly. Every screen needs to answer:\n• **Can I understand this quickly?**\n• **Can I complete this without training?**\n• **Does this save me from maintaining another manual record?**\n\nThe product is intentionally designed to support a lean business rather than force the business to behave like a large enterprise.\n\n### Contract Workforce\nVarahi Export does not operate with a large permanent employee structure. Contract workers are brought in based on business requirements.\n\nBecause of that, I avoided positioning Vikassy as a traditional enterprise **HR Management System**.\n\nInstead, the focus is **Workforce Management** — helping the owner maintain the information needed to coordinate the people involved in the business without introducing unnecessary HR processes.",
+        images: [],
+        layout: "single" as const,
+      },
+      {
+        category: "Prioritization",
+        subtitle: "What I Intentionally Did Not Prioritize",
+        content:
+          "I deliberately avoided making additional AI and voice functionality the center of the product.\n\nFeatures such as:\n• Voice assistant\n• AI business advisor\n• Advanced AI recommendations\n\nmay sound impressive, but they aren't more important than getting the core workflows right.\n\nThe priority is:\n> **Reliable business operations first. Intelligence later.**",
+        images: [],
+        layout: "single" as const,
+      },
+      {
+        category: "Conclusion",
+        subtitle: "Digitise what matters, not everything.",
+        content:
+          "Vikassy evolved from a billing tool into a **lightweight business operations platform** designed around the realities of a small garment business.\n\nI designed, implemented, and **validated the core workflows through user testing**, focusing on simplicity rather than enterprise-level complexity.\n\nThe product is currently in the **early implementation stage** and is not yet used in production. **Convex** was used for development and testing, with a more scalable database and backend planned for the next phase.\n\nSince there is no production usage yet, I have intentionally not included business-impact metrics.\n\n> **The goal wasn't to build a bigger ERP. It was to build a simpler one that fits how a small business actually works.**",
         images: [],
         layout: "single" as const,
       },
