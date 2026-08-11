@@ -22,6 +22,8 @@ import bulkPricingDiscoveryImage from "@/assets/projects/bulk-pricing-discovery.
 import bulkPricingImpactImage from "@/assets/projects/bulk-pricing-impact.png";
 import competitorIntelligenceDiscoveryImage from "@/assets/projects/competitor-intelligence-discovery.png";
 import competitorIntelligenceImpactImage from "@/assets/projects/competitor-intelligence-impact.png";
+import vikassyImage from "@/assets/projects/vikassy.jpg";
+
 
 export interface ProjectData {
   id: number;
@@ -406,6 +408,21 @@ export const projects: ProjectData[] = [
         subtitle: "Unified Operations, Not Another Tool",
         content:
           "myWebPOS wasn't about building another POS. It was about eliminating operational fragmentation and treating retail + e-commerce as one system. That's the actual value for small and medium merchants—not fancy UI or extra screens.\n\nAnd bluntly: most POS tools fail because they design for \"features,\" not messy real-world workflows. Our approach fixed the real problem—**business alignment, not cashier UI.**",
+        images: [],
+        layout: "single" as const,
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "vikassy",
+    subtitle: "Client: Vikassy | My Role: Product Designer | Industry: E-commerce | Platform: Web/Mobile App",
+    featuredImage: vikassyImage,
+    caseSections: [
+      {
+        category: "Overview",
+        subtitle: "Project Introduction",
+        content: "Content will be provided later.",
         images: [],
         layout: "single" as const,
       },

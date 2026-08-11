@@ -5,6 +5,8 @@ import productAttributes from "@/assets/projects/product-attributes.png";
 import productList from "@/assets/projects/product-list.png";
 import myOrderImage from "@/assets/projects/myorder.png";
 import myWebPOSThumbnail from "@/assets/projects/mywebpos-thumbnail.png";
+import vikassyImage from "@/assets/projects/vikassy.jpg";
+
 
 const projects = [
   {
@@ -40,6 +42,12 @@ const projects = [
     description:
       "A browser-based POS that syncs in-store sales with e-commerce fulfillment, eliminating stock mismatches and operational gaps.",
     image: myWebPOSThumbnail,
+  },
+  {
+    id: 6,
+    title: "vikassy",
+    description: "Case study for vikassy. Detailed content will be provided later.",
+    image: vikassyImage,
   },
 ];
 
