@@ -25,6 +25,8 @@ import competitorIntelligenceImpactImage from "@/assets/projects/competitor-inte
 import vikassyImage from "@/assets/projects/vikassy.png";
 import vikassyDiscoveryImage from "@/assets/projects/vikassy-discovery.jpg";
 import vikassyExplorationImage from "@/assets/projects/vikassy-exploration.png";
+import vikassyDecisionsImage from "@/assets/projects/vikassy-decisions.png";
+
 
 
 
@@ -480,7 +482,12 @@ export const projects: ProjectData[] = [
         subtitle: "Designing for Real Data & Financial Semantics",
         content:
           "One of the key product decisions was **not filling the dashboard with fake or meaningless data**.\n\nWhen there are no invoices:\n> **No revenue trend available yet**\n> Create your first invoice to start tracking revenue.\n\nWhen there are no customer sales:\n> **No customer sales data yet**\n\nWhen there are no invoices:\n> **No invoices yet**\n> Create your first invoice to start tracking sales and payments.\n\nThis makes the product honest about its current state while giving the user a clear next action.\n\n### Financial semantics\nA dashboard metric such as **Net Profit Margin** should represent a percentage, not a currency amount.\n\nSo when there is no revenue, the product shows the actual **Net Profit** rather than presenting a misleading margin percentage.\n\n> **Data consistency is a UX requirement, not just a technical requirement.**",
-        images: [],
+        images: [
+          {
+            src: vikassyDecisionsImage,
+            alt: "Key Product Decisions - Don't add complexity just because you can vs Group by mental model vs Data consistency over visual polish vs Empty states should guide action",
+          },
+        ],
         layout: "single" as const,
       },
       {
