@@ -25,13 +25,50 @@ const CaseSection = ({ category, subtitle, content, images, layout = "single", f
         </div>
 
         {/* Content */}
-        <div className="text-muted-foreground text-base md:text-lg leading-relaxed mb-10 whitespace-pre-line">
-          {content.split(/(\*\*[^*]+\*\*)/).map((part, index) => {
-            if (part.startsWith('**') && part.endsWith('**')) {
-              return <strong key={index} className="text-foreground font-semibold">{part.slice(2, -2)}</strong>;
-            }
-            return part;
-          })}
+        <div className="text-muted-foreground text-base md:text-lg leading-relaxed mb-10 space-y-3">
+          {(() => {
+            const parseBold = (text: string) => {
+              return text.split(/(\*\*[^*]+\*\*)/).map((part, index) => {
+                if (part.startsWith('**') && part.endsWith('**')) {
+                  return <strong key={index} className="text-foreground font-semibold">{part.slice(2, -2)}</strong>;
+                }
+                return part;
+              });
+            };
+
+            return content.split("\n").map((line, lineIndex) => {
+              const trimmedLine = line.trim();
+              if (trimmedLine.startsWith("### ")) {
+                return (
+                  <h3 key={lineIndex} className="text-lg md:text-xl font-bold text-foreground mt-6 mb-2 pt-2">
+                    {parseBold(trimmedLine.replace("### ", ""))}
+                  </h3>
+                );
+              }
+              if (trimmedLine.startsWith("## ")) {
+                return (
+                  <h2 key={lineIndex} className="text-xl md:text-2xl font-bold text-foreground mt-8 mb-3 pt-3">
+                    {parseBold(trimmedLine.replace("## ", ""))}
+                  </h2>
+                );
+              }
+              if (trimmedLine.startsWith("> ")) {
+                return (
+                  <blockquote key={lineIndex} className="border-l-4 border-neon-purple pl-4 italic my-4 text-foreground/90 bg-white/[0.02] py-2 pr-4 rounded-r">
+                    {parseBold(trimmedLine.replace("> ", ""))}
+                  </blockquote>
+                );
+              }
+              if (trimmedLine === "") {
+                return <div key={lineIndex} className="h-2" />;
+              }
+              return (
+                <p key={lineIndex}>
+                  {parseBold(line)}
+                </p>
+              );
+            });
+          })()}
         </div>
 
         {/* Figma Embed */}
