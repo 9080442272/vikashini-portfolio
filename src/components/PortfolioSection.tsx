@@ -14,6 +14,7 @@ const projects = [
     title: "Combining Sales Channel and Market Monitoring",
     description: "Unified marketplace onboarding that reduced setup time by 55% and increased activation by 39%.",
     image: salesChannelImage,
+    tag: "B2B SaaS",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const projects = [
     description:
       "Replaced spreadsheet uploads with an in-product bulk editor, cutting pricing time from 20 mins to under 2 mins.",
     image: productAttributes,
+    tag: "B2B SaaS",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const projects = [
     description:
       "Enabled layered competitive insights that shifted users from reactive price matching to strategic decision-making.",
     image: productList,
+    tag: "B2B SaaS",
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ const projects = [
     description:
       "A simple Kanban-based order tool for small sellers that replaces warehouse complexity. Helps them move orders to 'shipped' faster with less effort.",
     image: myOrderImage,
+    tag: "B2B SaaS",
   },
   {
     id: 5,
@@ -42,12 +46,14 @@ const projects = [
     description:
       "A browser-based POS that syncs in-store sales with e-commerce fulfillment, eliminating stock mismatches and operational gaps.",
     image: myWebPOSThumbnail,
+    tag: "B2B SaaS",
   },
   {
     id: 6,
-    title: "vikassy",
-    description: "Case study for vikassy. Detailed content will be provided later.",
+    title: "Vikassy",
+    description: "A lightweight business operations platform designed for a Tirupur-based garment manufacturer.",
     image: vikassyImage,
+    tag: "Personal Project",
   },
 ];
 
@@ -110,6 +116,11 @@ const PortfolioSection = () => {
                 </div>
 
                 <div className="p-6">
+                  {project.tag && (
+                    <span className="inline-flex items-center rounded-full bg-primary/10 border border-primary/20 px-2.5 py-0.5 text-xs font-semibold text-primary mb-3">
+                      {project.tag}
+                    </span>
+                  )}
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
