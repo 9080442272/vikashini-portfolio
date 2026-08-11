@@ -23,6 +23,8 @@ import bulkPricingImpactImage from "@/assets/projects/bulk-pricing-impact.png";
 import competitorIntelligenceDiscoveryImage from "@/assets/projects/competitor-intelligence-discovery.png";
 import competitorIntelligenceImpactImage from "@/assets/projects/competitor-intelligence-impact.png";
 import vikassyImage from "@/assets/projects/vikassy.png";
+import vikassyDiscoveryImage from "@/assets/projects/vikassy-discovery.jpg";
+
 
 
 
@@ -442,7 +444,12 @@ export const projects: ProjectData[] = [
         subtitle: "The problem wasn't a lack of software. It was fragmented information.",
         content:
           "Because Varahi Export is my father's business, I had direct exposure to how day-to-day management happened.\n\nI observed that the owner had to personally coordinate multiple areas of the business while relying on different methods for recording information.\n\n### Key insight\n> **The problem wasn't “we need more features.” It was “we need less fragmentation.”**",
-        images: [],
+        images: [
+          {
+            src: vikassyDiscoveryImage,
+            alt: "The Reality We Observed - fragmented tools vs unified business system diagram",
+          },
+        ],
         layout: "single" as const,
       },
       {
