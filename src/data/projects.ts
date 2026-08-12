@@ -27,6 +27,8 @@ import vikassyDiscoveryImage from "@/assets/projects/vikassy-discovery.jpg";
 import vikassyExplorationImage from "@/assets/projects/vikassy-exploration.png";
 import vikassyDecisionsImage from "@/assets/projects/vikassy-decisions.png";
 import vikassyArchitectureImage from "@/assets/projects/vikassy-architecture.png";
+import vikassyPrioritizationImage from "@/assets/projects/vikassy-prioritization.png";
+
 
 
 
@@ -491,7 +493,7 @@ export const projects: ProjectData[] = [
         category: "Prioritization",
         subtitle: "What I Intentionally Did Not Prioritize",
         content:
-          "I deliberately avoided making additional AI and voice functionality the center of the product.\n\nFeatures such as:\n• Voice assistant\n• AI business advisor\n• Advanced AI recommendations\n\nmay sound impressive, but they aren't more important than getting the core workflows right.\n\nThe priority is:\n> **Reliable business operations first. Intelligence later.**",
+          `I deliberately avoided making additional AI and voice functionality the center of the product.\n\nFeatures such as:\n• Voice assistant\n• AI business advisor\n• Advanced AI recommendations\n\nmay sound impressive, but they aren't more important than getting the core workflows right.\n\n![What I Prioritized vs What I Didn't](${vikassyPrioritizationImage})\n\nThe priority is:\n> **Reliable business operations first. Intelligence later.**`,
         images: [],
         layout: "single" as const,
       },
