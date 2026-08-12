@@ -5,9 +5,10 @@ interface ProjectHeroProps {
   title: string;
   subtitle: string;
   featuredImage: string;
+  liveLink?: string;
 }
 
-const ProjectHero = ({ title, subtitle, featuredImage }: ProjectHeroProps) => {
+const ProjectHero = ({ title, subtitle, featuredImage, liveLink }: ProjectHeroProps) => {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
@@ -37,13 +38,24 @@ const ProjectHero = ({ title, subtitle, featuredImage }: ProjectHeroProps) => {
         </button>
 
         {/* Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 flex flex-col items-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
             {title}
           </h1>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-6">
             {subtitle}
           </p>
+          {liveLink && (
+            <a
+              href={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-neon-purple hover:bg-neon-purple/90 text-white font-semibold px-6 py-2.5 text-sm transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5"
+            >
+              <span>View Live Project</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          )}
         </div>
 
         {/* Featured Image Card */}

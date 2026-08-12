@@ -40,6 +40,7 @@ export interface ProjectData {
   title: string;
   subtitle: string;
   featuredImage: string;
+  liveLink?: string;
   caseSections: {
     category: string;
     subtitle: string;
@@ -428,6 +429,7 @@ export const projects: ProjectData[] = [
     title: "Vikassy — Digitising day-to-day operations for a small garment business",
     subtitle: "Client: Varahi Export | My Role: Product Designer & Product Owner | Industry: Garment Manufacturing | Platform: Web Application",
     featuredImage: vikassyImage,
+    liveLink: "https://vikassy-billing-software-sdp8.vercel.app/",
     caseSections: [
       {
         category: "Overview",

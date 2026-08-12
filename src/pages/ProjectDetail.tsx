@@ -28,6 +28,7 @@ const ProjectDetail = () => {
         title={projectData.title}
         subtitle={projectData.subtitle}
         featuredImage={projectData.featuredImage}
+        liveLink={projectData.liveLink}
       />
 
       {/* Case Study Sections */}
