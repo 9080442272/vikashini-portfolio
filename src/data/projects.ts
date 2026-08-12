@@ -26,6 +26,8 @@ import vikassyImage from "@/assets/projects/vikassy.png";
 import vikassyDiscoveryImage from "@/assets/projects/vikassy-discovery.jpg";
 import vikassyExplorationImage from "@/assets/projects/vikassy-exploration.png";
 import vikassyDecisionsImage from "@/assets/projects/vikassy-decisions.png";
+import vikassyArchitectureImage from "@/assets/projects/vikassy-architecture.png";
+
 
 
 
@@ -471,7 +473,7 @@ export const projects: ProjectData[] = [
         category: "Architecture",
         subtitle: "Information Architecture & Final Product Structure",
         content:
-          "The final IA reflects the actual business rather than an enterprise software template:\n\n```\nDashboard\n\nSales & Billing\n ├── Clients\n └── Invoice\n\nOperations\n └── Jobs\n\nWorkforce\n └── Employees\n\nFinance\n ├── Capital & Investment\n └── Factory Expenses & Bills\n\nSystem\n └── Settings\n```\n\n### Why this structure?\nEach section represents a distinct responsibility:\n• **Sales & Billing** → money earned\n• **Operations** → work being done\n• **Workforce** → people involved\n• **Finance** → money going out / capital\n• **Dashboard** → overall business visibility",
+          `The final IA reflects the actual business rather than an enterprise software template:\n\n![Vikassy Navigation Structure](${vikassyArchitectureImage})\n\n### Why this structure?\nEach section represents a distinct responsibility:\n• **Sales & Billing** → money earned\n• **Operations** → work being done\n• **Workforce** → people involved\n• **Finance** → money going out / capital\n• **Dashboard** → overall business visibility`,
         images: [],
         layout: "single" as const,
       },
