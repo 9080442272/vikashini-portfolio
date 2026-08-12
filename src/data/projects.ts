@@ -493,7 +493,7 @@ export const projects: ProjectData[] = [
         category: "Prioritization",
         subtitle: "What I Intentionally Did Not Prioritize",
         content:
-          `I deliberately avoided making additional AI and voice functionality the center of the product.\n\nFeatures such as:\n• Voice assistant\n• AI business advisor\n• Advanced AI recommendations\n\nmay sound impressive, but they aren't more important than getting the core workflows right.\n\n![What I Prioritized vs What I Didn't](${vikassyPrioritizationImage})\n\nThe priority is:\n> **Reliable business operations first. Intelligence later.**`,
+          `![What I Prioritized vs What I Didn't](${vikassyPrioritizationImage})\n\nThe priority is:\n> **Reliable business operations first. Intelligence later.**`,
         images: [],
         layout: "single" as const,
       },
