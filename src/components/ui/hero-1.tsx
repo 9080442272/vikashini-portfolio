@@ -5,7 +5,6 @@ import { Menu, X, Phone, Linkedin, Mail, Volume2, VolumeX, Play } from 'lucide-r
 import { useIsMobile } from '@/hooks/use-mobile'
 import { FlowButton } from '@/components/ui/flow-button'
 import { motion, AnimatePresence } from 'framer-motion'
-import CinematicLayer from '@/components/CinematicLayer'
 
 interface NavigationItem {
   name: string
@@ -207,8 +206,6 @@ export function HeroLanding(props: HeroLandingProps) {
   return (
     <div className={`min-h-screen w-full overflow-hidden relative bg-transparent flex flex-col justify-between ${className || ''}`}>
 
-      {/* WebGL Depth-of-Field (Bokeh) Layer */}
-      {!isParentLoading && <CinematicLayer />}
 
       {/* Dark vignette overlays for maximum text contrast and legibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#040406]/60 via-[#040406]/90 to-background z-0 pointer-events-none" />
