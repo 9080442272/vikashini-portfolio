@@ -7,7 +7,6 @@ import productListExpanded from "@/assets/projects/product-list-expanded.png";
 import performanceAnalysis from "@/assets/projects/performance-analysis.png";
 import performanceSettings from "@/assets/projects/performance-settings.png";
 import myOrderImage from "@/assets/projects/myorder.png";
-import myWebPOSThumbnail from "@/assets/projects/mywebpos-thumbnail.png";
 import orderPreparationImage from "@/assets/projects/order-preparation.png";
 import ordersListImage from "@/assets/projects/orders-list.png";
 import marketRadarImage from "@/assets/projects/market-radar.png";
@@ -371,63 +370,6 @@ export const projects: ProjectData[] = [
   },
   {
     id: 5,
-    title: "myWebPOS – Browser-Based POS for Unified Retail",
-    subtitle:
-      "Client: Boostmyshop APP | My Role: Product Designer | Industry: E-commerce & Retail | Platform: Web Application",
-    featuredImage: myWebPOSThumbnail,
-    caseSections: [
-      {
-        category: "Introduction",
-        subtitle: "Bridging Online and In-Store Operations",
-        content:
-          "myWebPOS was created specifically for merchants already using BoostMyShop's myFulfillment system. These customers were managing online orders efficiently, but their in-store sales were still happening on disconnected POS tools, causing constant stock mismatches and operational gaps.\n\n**Key stakeholders and what they expected:**\n\n• **Existing myFulfillment Merchants:** wanted in-store sales to sync automatically with their fulfillment workflow—no more manual stock updates or messy reconciliations.\n\n• **Business Leadership:** wanted to strengthen BoostMyShop's ecosystem by tying retail operations directly into the fulfillment backbone, increasing retention and product stickiness.\n\n• **Support & Operations Teams:** needed fewer integration points and a single ecosystem to troubleshoot, instead of merchants plugging in random third-party POS tools.\n\n• **Product Team:** needed to build a POS that behaved like a natural extension of myFulfillment, not an independent product that duplicated inventory logic.\n\nThe shared understanding was blunt:\n**If POS didn't integrate tightly with myFulfillment, it was useless.**\n\nSo the design goal became creating a checkout system that felt like the retail front-end of myFulfillment—fast, synced, and fully tied into the same inventory and order engine.",
-        images: [],
-        layout: "single" as const,
-      },
-      {
-        category: "Problem Statement",
-        subtitle: "Fragmented Retail and E-commerce",
-        content:
-          "Small and medium merchants needed a POS that didn't operate like a separate world. They wanted real-time inventory sync, fast checkout, and a single system to handle online orders, in-store sales, pickups, and returns without manual work or switching platforms.\n\nThe problem wasn't \"we need a POS.\"\nThe real problem was **they couldn't run retail and e-commerce as one business.**",
-        images: [],
-        layout: "single" as const,
-      },
-      {
-        category: "Core Issues",
-        subtitle: "What Staff and Merchants Told Us",
-        content:
-          "From interviewing store staff, managers, and merchants, these issues repeatedly surfaced:\n\n• **Checkout took too many steps**\n• **Staff had no idea if an item was actually available**\n• **Return handling was disconnected from online orders**\n• **Order types were confusing for staff**\n• **Hardware requirements were expensive and impractical**\n\nThe biggest blocker: merchants didn't trust inventory accuracy because data lived in multiple places.",
-        images: [],
-        layout: "single" as const,
-      },
-      {
-        category: "Brainstorming",
-        subtitle: "Mapping Problems to Solutions",
-        content:
-          'We mapped problems against operational phases:\n\n• browse → checkout\n• checkout → payment\n• payment → order status\n• order → fulfillment\n• return → restock\n\n**Then prioritized based on impact vs friction:**\n\n1. Checkout speed\n2. Inventory clarity\n3. Multichannel order types\n4. Return flow\n5. Hardware independence\n\nWe dropped ideas that required major staff training or added cognitive load. The goal was "just works," not "feature rich."',
-        images: [],
-        layout: "single" as const,
-      },
-      {
-        category: "Solution",
-        subtitle: "A Browser-Based, Device-Agnostic POS",
-        content:
-          "We designed a browser-based POS that:\n\n• **Runs on any device** (tablet, desktop, laptop)\n• **Updates stock instantly** across channels\n• **Handles all order types** in one flow\n• **Simplifies returns** to a single step\n• **Supports fast barcode checkout**\n• **Keeps carts persistent**\n• **Surfaces stock info next to product**, not buried\n\nBasically: remove friction, hide complexity, automate what staff kept doing manually.\n\nThe interface adapts to context instead of asking staff to choose workflows. That's how retail should work.",
-        images: [],
-        layout: "single" as const,
-      },
-      {
-        category: "Conclusion",
-        subtitle: "Unified Operations, Not Another Tool",
-        content:
-          "myWebPOS wasn't about building another POS. It was about eliminating operational fragmentation and treating retail + e-commerce as one system. That's the actual value for small and medium merchants—not fancy UI or extra screens.\n\nAnd bluntly: most POS tools fail because they design for \"features,\" not messy real-world workflows. Our approach fixed the real problem—**business alignment, not cashier UI.**",
-        images: [],
-        layout: "single" as const,
-      },
-    ],
-  },
-  {
-    id: 6,
     title: "Vikassy — Digitising day-to-day operations for a small garment business",
     subtitle: "Client: Varahi Export | My Role: Product Designer & Product Owner | Industry: Garment Manufacturing | Platform: Web Application",
     featuredImage: vikassyImage,

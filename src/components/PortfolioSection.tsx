@@ -4,7 +4,6 @@ import salesChannelImage from "@/assets/projects/sales-channel.png";
 import productAttributes from "@/assets/projects/product-attributes.png";
 import productList from "@/assets/projects/product-list.png";
 import myOrderImage from "@/assets/projects/myorder.png";
-import myWebPOSThumbnail from "@/assets/projects/mywebpos-thumbnail.png";
 import vikassyImage from "@/assets/projects/vikassy.png";
 
 
@@ -42,14 +41,6 @@ const projects = [
   },
   {
     id: 5,
-    title: "myWebPOS – Browser-Based POS for Unified Retail",
-    description:
-      "A browser-based POS that syncs in-store sales with e-commerce fulfillment, eliminating stock mismatches and operational gaps.",
-    image: myWebPOSThumbnail,
-    tag: "B2B SaaS",
-  },
-  {
-    id: 6,
     title: "Vikassy",
     description: "A lightweight business operations platform designed for a Tirupur-based garment manufacturer.",
     image: vikassyImage,
