@@ -468,14 +468,6 @@ export const projects: ProjectData[] = [
         layout: "single" as const,
       },
       {
-        category: "Product Decisions",
-        subtitle: "Designing for Real Data & Financial Semantics",
-        content:
-          `This makes the product honest about its current state while giving the user a clear next action.\n\n![Key Product Decisions](${vikassyDecisionsImage})\n\n### Financial semantics\nA dashboard metric such as **Net Profit Margin** should represent a percentage, not a currency amount.\n\nSo when there is no revenue, the product shows the actual **Net Profit** rather than presenting a misleading margin percentage.\n\n> **Data consistency is a UX requirement, not just a technical requirement.**`,
-        images: [],
-        layout: "single" as const,
-      },
-      {
         category: "Architecture",
         subtitle: "Information Architecture & Final Product Structure",
         content:
