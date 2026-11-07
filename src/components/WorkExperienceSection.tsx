@@ -34,18 +34,6 @@ const experiences = [
     ],
     tech: ["Figma", "User Research", "Interaction Design", "B2B SaaS", "User Funnels"]
   },
-  {
-    period: "Apr 2021 - Oct 2021",
-    company: "Cloudzoo India Software",
-    role: "UX/UI Designer",
-    location: "Tirupur",
-    bullets: [
-      "Designed and validated transaction and onboarding flows, reducing checkout friction.",
-      "Improved task completion by aligning journeys with engineering constraints and user insights.",
-      "Collaborated with product teams to build clean design system tokens."
-    ],
-    tech: ["Figma", "Prototyping", "Design Systems", "Usability Testing", "Wireframing"]
-  },
 ];
 
 const WorkExperienceSection = () => {
