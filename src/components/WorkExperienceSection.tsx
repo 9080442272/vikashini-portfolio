@@ -21,7 +21,7 @@ const experiences = [
   {
     period: "Jan 2022 - Feb 2026",
     company: "Boostmyshop",
-    role: "Product Designer",
+    role: "UX/UI Designer",
     location: "Puducherry, India",
     bullets: [
       "Sole designer across three B2B SaaS products — partnered with Product and Engineering to translate complex merchant workflows into evidence-based, high-adoption UX.",
