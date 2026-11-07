@@ -120,18 +120,6 @@ export function HeroLanding(props: HeroLandingProps) {
   const [isMuted, setIsMuted] = useState(false)
   const [videoPlaying, setVideoPlaying] = useState(false)
 
-  // Secondary landscape showcase video
-  const showcaseRef = useRef<HTMLVideoElement>(null)
-  const [showcaseMuted, setShowcaseMuted] = useState(true)
-
-  const toggleShowcaseMute = () => {
-    if (showcaseRef.current) {
-      const next = !showcaseRef.current.muted
-      showcaseRef.current.muted = next
-      setShowcaseMuted(next)
-    }
-  }
-
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation()
     if (videoRef.current) {
@@ -537,42 +525,7 @@ export function HeroLanding(props: HeroLandingProps) {
           </motion.div>
         </div>
 
-        {/* Showcase video */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-16 w-full max-w-[860px] mx-auto"
-        >
-          <div className="relative aspect-video rounded-2xl border border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.6)] overflow-hidden bg-black/40">
-            <video
-              ref={showcaseRef}
-              src="/hero_showcase.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="w-full h-full object-cover select-none"
-            />
-            <button
-              type="button"
-              onClick={toggleShowcaseMute}
-              aria-label={showcaseMuted ? 'Unmute video' : 'Mute video'}
-              className="absolute bottom-3 left-3 z-10 h-8 px-3 rounded-full border border-white/10 flex items-center gap-1.5 text-white/90 hover:text-primary hover:border-primary/30 bg-black/60 backdrop-blur-md transition-all text-[11px] font-semibold cursor-pointer shadow-md select-none hover:scale-105 active:scale-95"
-            >
-              {showcaseMuted ? (
-                <>
-                  <VolumeX className="w-3.5 h-3.5" />
-                  <span>Unmute</span>
-                </>
-              ) : (
-                <>
-                  <Volume2 className="w-3.5 h-3.5 text-purple-400" />
-                  <span>Mute</span>
-                </>
-              )}
-            </button>
-          </div>
-        </motion.div>
+
       </motion.div>
 
     </div>
